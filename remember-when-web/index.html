@@ -3,7 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Remember When - AI Agent Skill</title>
+  
+  <!-- SEO Headers -->
+  <title>Remember When - AI Agent Skill for Local Digital Memory</title>
+  <meta name="description" content="A specialized AI Agent skill to capture, synthesize, and organize digital memories directly on your local disk. Privacy-first, autonomous archiving for groups.">
+  <meta name="keywords" content="AI, Agent, OpenClaw, Digital Memory, Local Storage, WhatsApp Archive, Telegram Archive, Privacy, Digital Archivist">
+  <meta name="author" content="2mes4">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Remember When - AI Agent Skill">
+  <meta property="og:description" content="Empower your AI agent to act as a proactive digital archivist. Local storage, smart summaries, and autonomous maintenance.">
+  <meta property="og:image" content="https://remember-when.agentic.2mes4.com/logo.svg">
+  <meta property="og:url" content="https://remember-when.agentic.2mes4.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -81,17 +95,23 @@
             <pre>npm install -g remember-when-cli</pre>
           </div>
           <div class="step-item">
-            <p><span class="step-num">2.</span> <span data-i18n="step2">Configure the Skill in OpenClaw:</span></p>
+            <p><span class="step-num">2.</span> <span data-i18n="step2">Configure the Skill in your environment:</span></p>
             <p style="margin-top: 1rem; color: var(--text-muted);" data-i18n="step2_text">Choose your preferred installation method:</p>
             
             <div class="tabs">
-              <button class="tab-btn active" onclick="showTab('clawhub')">Clawhub</button>
+              <button class="tab-btn active" onclick="showTab('openclaw')">OpenClaw</button>
+              <button class="tab-btn" onclick="showTab('clawhub')">Clawhub</button>
               <button class="tab-btn" onclick="showTab('skills')">skills.sh</button>
             </div>
 
-            <div id="clawhub" class="tab-content active">
-              <p style="margin-bottom: 1rem; color: var(--text-muted);" data-i18n="step2_clawhub">Install directly via the OpenClaw command line:</p>
+            <div id="openclaw" class="tab-content active">
+              <p style="margin-bottom: 1rem; color: var(--text-muted);" data-i18n="step2_openclaw">Install via the standard OpenClaw command:</p>
               <pre>openclaw install remember-when-skill</pre>
+            </div>
+
+            <div id="clawhub" class="tab-content">
+              <p style="margin-bottom: 1rem; color: var(--text-muted);" data-i18n="step2_clawhub">Install directly using the Clawhub CLI:</p>
+              <pre>npx clawhub install remember-when-skill</pre>
             </div>
 
             <div id="skills" class="tab-content">
@@ -127,9 +147,10 @@
         card3_text: "Your AI agent generates enriched chronicles and daily summaries, allowing you to recall complex conversations through semantic meaning rather than just keywords.",
         installation: "Installation",
         step1: "Install the storage engine (CLI) globally:",
-        step2: "Configure the Skill in OpenClaw:",
+        step2: "Configure the Skill in your environment:",
         step2_text: "Choose your preferred installation method:",
-        step2_clawhub: "Install directly via the OpenClaw command line:",
+        step2_openclaw: "Install via the standard OpenClaw command:",
+        step2_clawhub: "Install directly using the Clawhub CLI:",
         step2_skills: "Alternatively, use the automated installer script:",
         step3: "Let your Agent handle the rest:",
         step3_text: "Your agent will automatically start archiving memories. Use the inventory command to audit your local memory state:",
@@ -147,9 +168,10 @@
         card3_text: "El teu agent d'IA genera cròniques enriquides i resums diaris, permetent-te recordar converses complexes a través del significat semàntic en lloc de només paraules clau.",
         installation: "Instal·lació",
         step1: "Instal·la el motor d'emmagatzematge (CLI) globalment:",
-        step2: "Configura la Skill a OpenClaw:",
+        step2: "Configura la Skill al teu entorn:",
         step2_text: "Tria el teu mètode d'instal·lació preferit:",
-        step2_clawhub: "Instal·la directament via la línia de comandes d'OpenClaw:",
+        step2_openclaw: "Instal·la via la comanda estàndard d'OpenClaw:",
+        step2_clawhub: "Instal·la directament utilitzant la CLI de Clawhub:",
         step2_skills: "Alternativament, utilitza l'script d'instal·lació automàtica:",
         step3: "Deixa que el teu Agent s'encarregui de la resta:",
         step3_text: "El teu agent començarà a arxivar records automàticament. Utilitza la comanda inventory per auditar l'estat de la teva memòria local:",
@@ -162,14 +184,15 @@
         card1_title: "¿Qué es esta Skill de IA?",
         card1_text: "Es un conjunto de herramientas profesionales diseñado para Agentes de IA (OpenClaw). Permite que tu agente actúe como un archivero digital proactivo en grupos de WhatsApp o Telegram, identificando momentos valiosos y guardándolos en almacenamiento local mediante nuestro CLI dedicado.",
         card2_title: "Gestión Autónoma de Multimedia",
-        card2_text: "El agente detecta fotos, vídeos y notas de voz, los copia a carpetas organizadas por fecha (YYYY-MM-DD) y garantiza que tus datos se mantengan privados en tu máquina.",
+        card2_text: "El agente detecta fotos, vídeos y notas de voz, los copia a carpetes organizadas por fecha (YYYY-MM-DD) y garantiza que tus datos se mantengan privados en tu máquina.",
         card3_title: "Resúmenes Cognitivos",
         card3_text: "Tu agente de IA genera crónicas enriquecidas y resúmenes diarios, permitiéndote recordar conversaciones complejas a través del significado semántico en lugar de solo palabras clave.",
         installation: "Instalación",
         step1: "Instala el motor de almacenamiento (CLI) globalmente:",
-        step2: "Configura la Skill en OpenClaw:",
+        step2: "Configura la Skill en tu entorno:",
         step2_text: "Elige tu método de instalación preferido:",
-        step2_clawhub: "Instala directamente a través de la línea de comandos de OpenClaw:",
+        step2_openclaw: "Instala a través del comando estándar de OpenClaw:",
+        step2_clawhub: "Instala directamente usando la CLI de Clawhub:",
         step2_skills: "Alternativamente, usa el script de instalación automática:",
         step3: "Deja que tu Agente se encargue del resto:",
         step3_text: "Tu agente comenzará a archivar recuerdos automáticamente. Usa el comando inventory para auditar el estado de tu memoria local:",
@@ -184,32 +207,34 @@
         card2_title: "Gestão Autónoma de Multimédia",
         card2_text: "O agente deteta fotos, vídeos e notas de voz, copia-os para pastas organizadas por data (AAAA-MM-DD) e garante que os seus dados permanecem privados na sua máquina.",
         card3_title: "Resumos Cognitivos",
-        card3_text: "O seu agente de IA gera crónicas enriquecidas e resumos diários, permitindo-lhe recordar conversas complexas através do significado semântico em vez de apenas palavras-chave.",
+        card3_text: "O seu agente de IA gera crónicas enriquecidas e resumos diários, permitindo-lhe recordar converses complexas através do significado semântico em vez de apenas palavras-chave.",
         installation: "Instalação",
         step1: "Instale o motor de armazenamento (CLI) globalmente:",
-        step2: "Configure a Skill no OpenClaw:",
+        step2: "Configure a Skill no seu ambiente:",
         step2_text: "Escolha o seu método de instalação preferido:",
-        step2_clawhub: "Instale diretamente através da linha de comandos do OpenClaw:",
+        step2_openclaw: "Instale através do comando padrão do OpenClaw:",
+        step2_clawhub: "Instale diretamente usando a CLI do Clawhub:",
         step2_skills: "Alternativamente, utilize o script de instalação automática:",
         step3: "Deixe o seu Agente tratar do resto:",
         step3_text: "O seu agente começará a arquivar memórias automaticamente. Utilize o comando inventory para auditar o estado da sua memória local:",
-        footer: "Remember When © 2026 - Impulsado por Agentes de IA, controlado por si."
+        footer: "Remember When © 2026 - Impulsionado por Agentes de IA, controlado por si."
       },
       fr: {
         badge: "Skill Agentique",
         title: "Remember When",
-        hero_subtitle: "Créez un grupo et commencez à partager ; votre agent créera un journal de ce qui se passe. Utilisez-le au travail, en voyage ou dans des groupes d'amis... C'est facile, rapide et gratuit.",
+        hero_subtitle: "Créez un groupe et commencez à partager ; votre agent créera un journal de ce qui se passe. Utilisez-le au travail, en voyage ou dans des groupes d'amis... C'est facile, rapide et gratuit.",
         card1_title: "Qu'est-ce que cette Skill d'IA ?",
         card1_text: "Il s'agit d'une boîte d'outils professionnelle conçue pour les Agents d'IA (OpenClaw). Elle permet à votre agent d'agir comme un archiviste numérique proactif dans les groupes WhatsApp ou Telegram, en identifiant les moments précieux et en les sauvegardant localement via notre CLI dédié.",
         card2_title: "Gestion Autonome des Médias",
         card2_text: "L'agent détecte les photos, vidéos et notes vocales, les copie dans des dossiers organisés par date (AAAA-MM-DD) et garantit que vos données restent privées sur votre machine.",
-        card3_title: "Resúmenes Inteligentes",
+        card3_title: "Résumés Cognitifs",
         card3_text: "Votre agent d'IA génère des chroniques enrichies et des résumés quotidiens, vous permettant de vous remémorer des conversations complexes grâce à leur sens sémantique plutôt qu'à de simples mots-clés.",
         installation: "Installation",
         step1: "Installez le moteur de stockage (CLI) globalement :",
-        step2: "Configurez la Skill dans OpenClaw :",
+        step2: "Configurez la Skill dans votre environnement :",
         step2_text: "Choisissez votre méthode d'installation préférée :",
-        step2_clawhub: "Installez directement via la ligne de commande OpenClaw :",
+        step2_openclaw: "Installez via la commande standard OpenClaw :",
+        step2_clawhub: "Installez directement via la CLI Clawhub :",
         step2_skills: "Sinon, utilisez le script d'installation automatique :",
         step3: "Laissez votre Agent faire le reste :",
         step3_text: "Votre agent commencera automatiquement à archiver les souvenirs. Utilisez la commande inventory pour auditer l'état de votre mémoire locale :",
@@ -227,9 +252,10 @@
         card3_text: "代理不仅保存文件；它还会生成丰富的摘要和每日纪事，以便您可以按其含义而不仅仅是按日期搜索时刻。",
         installation: "安装",
         step1: "全局安装存储引擎 (CLI)：",
-        step2: "在 OpenClaw 中配置您的技能：",
+        step2: "在您的环境中配置技能：",
         step2_text: "选择您喜欢的安装方法：",
-        step2_clawhub: "通过 OpenClaw 命令行直接安装：",
+        step2_openclaw: "通过标准 OpenClaw 命令安装：",
+        step2_clawhub: "直接使用 Clawhub CLI 安装：",
         step2_skills: "或者，使用自动安装脚本：",
         step3: "见证奇迹的发生：",
         step3_text: "代理将开始保存条目。您可以使用以下命令检查缺少的库存：",
@@ -247,9 +273,10 @@
         card3_text: "AIエージェントは充実した記録と毎日の要約を生成し、単なるキーワードではなく、意味を通じて複雑な会話を思い出すことができます。",
         installation: "インストール",
         step1: "ストレージエンジン（CLI）をグローバルにインストールします：",
-        step2: "OpenClawでスキルを構成します：",
+        step2: "環境でスキルを構成します：",
         step2_text: "ご希望のインストール方法を選択してください：",
-        step2_clawhub: "OpenClawコマンドラインを介して直接インストールする：",
+        step2_openclaw: "標準のOpenClawコマンドを介してインストールする：",
+        step2_clawhub: "Clawhub CLIを使用して直接インストールする：",
         step2_skills: "または、自動インストールスクリプトを使用する：",
         step3: "残りはエージェントに任せましょう：",
         step3_text: "エージェントは自動的に思い出のアーカイブを開始します。inventoryコマンドを使用して、ローカルメモリの状態を監査します：",
@@ -267,9 +294,10 @@
         card3_text: "يقوم وكيل الذكاء الاصطناعي الخاص بك بإنشاء سجلات غنية وملخصات يومية، مما يسمح لك باسترجاع المحادثات المعقدة من خلال المعنى الدلالي بدلاً من مجرد الكلمات الرئيسية.",
         installation: "التثبيت",
         step1: "تثبيت محرك التخزين (CLI) عالميًا:",
-        step2: "تكوين المهارة في OpenClaw:",
+        step2: "تكوين المهارة في بيئتك:",
         step2_text: "اختر طريقة التثبيت المفضلة لديك:",
-        step2_clawhub: "التثبيت مباشرة عبر سطر أوامر OpenClaw:",
+        step2_openclaw: "التثبيت عبر أمر OpenClaw القياسي:",
+        step2_clawhub: "التثبيت مباشرة باستخدام Clawhub CLI:",
         step2_skills: "بدلاً من ذلك، استخدم نص التثبيت الآلي:",
         step3: "اترك الباقي لوكيلك:",
         step3_text: "سيبدأ وكيلك تلقائيًا في أرشفة الذكريات. استخدم أمر inventory لمراجعة حالة ذاكرتك المحلية:",
@@ -287,9 +315,10 @@
         card3_text: "आपका AI एजेंट समृद्ध इतिहास और दैनिक सारांश उत्पन्न करता है, जिससे आप केवल कीवर्ड के बजाय शब्दार्थ अर्थ के माध्यम से जटिल बातचीत को याद कर सकते हैं।",
         installation: "स्थापना",
         step1: "स्टोरेज इंजन (CLI) को विश्व स्तर पर स्थापित करें:",
-        step2: "OpenClaw में स्किल को कॉन्फ़िगर करें:",
+        step2: "अपने वातावरण में स्किल को कॉन्फ़िगर करें:",
         step2_text: "अपनी पसंदीदा स्थापना विधि चुनें:",
-        step2_clawhub: "OpenClaw कमांड लाइन के माध्यम से सीधे स्थापित करें:",
+        step2_openclaw: "मानक OpenClaw कमांड के माध्यम से स्थापित करें:",
+        step2_clawhub: "Clawhub CLI का उपयोग करके सीधे स्थापित करें:",
         step2_skills: "वैकल्पिक रूप से, स्वचालित इंस्टॉलर स्क्रिप्ट का उपयोग करें:",
         step3: "बाकी काम अपने एजेंट पर छोड़ दें:",
         step3_text: "आपका एजेंट स्वचालित रूप से यादों को संग्रहीत करना शुरू कर देगा। अपने स्थानीय मेमोरी स्थिति का ऑडिट करने के लिए inventory कमांड का उपयोग करें:",
@@ -300,16 +329,17 @@
         title: "Remember When",
         hero_subtitle: "ഒരു ഗ്രൂപ്പ് സൃഷ്ടിച്ച് പങ്കിടാൻ തുടങ്ങുക; സംഭവിക്കുന്ന കാര്യങ്ങളുടെ ഒരു ലോഗ് നിങ്ങളുടെ ഏജന്റ് സൃഷ്ടിക്കും. ജോലിസ്ഥലത്തോ യാത്രകളിലോ സുഹൃത്തുക്കളുടെ ഗ്രൂപ്പുകളിലോ ഇത് ഉപയോഗിക്കുക... ഇത് എളുപ്പവും വേഗതയേറിയതും സൗജന്യവുമാണ്.",
         card1_title: "എന്താണ് ഈ AI സ്കിൽ?",
-        card1_text: "AI ഏജന്റുകൾക്കായി (OpenClaw) രൂപകൽപ്പന ചെയ്‌തിരിക്കുന്ന ഒരു പ്രൊഫഷണൽ ടൂൾകിറ്റാണിത്. വാട്ട്‌സ്ആപ്പ് അല്ലെങ്കിൽ ടെലിഗ്രാം ഗ്രൂപ്പുകൾക്കുള്ളിൽ ഒരു സജീവ ഡിജിറ്റൽ ആർക്കൈവിസ്റ്റായി പ്രവർത്തിക്കാൻ ഇത് നിങ്ങളുടെ ഏജന്റിനെ പ്രാപ്‌തമാക്കുന്നു, വിലയേറിയ നിമിഷങ്ങൾ തിരിച്ചറിയുകയും ഞങ്ങളുടെ സമർപ്പിത CLI ഉപയോഗിച്ച് പ്രാദേശിക സംഭരണത്തിലേക്ക് അവ സംരക്ഷിക്കുകയും ചെയ്യുന്നു.",
+        card1_text: "AI ഏജന്റുകൾക്കായി (OpenClaw) രൂപകൽപ്പന ചെയ്‌തിരിക്കുന്ന ഒരു പ്രൊഫഷണൽ ടൂൾകിറ്റാണിത്. വാട്ട്‌സ്ആപ്പ് അല്ലെങ്കിൽ ടെലിഗ്രാം ഗ്രൂപ്പുകൾക്കുള്ളിൽ ഒരു സജീവ ഡിജിറ്റль ആർക്കൈവിസ്റ്റായി പ്രവർത്തിക്കാൻ ഇത് നിങ്ങളുടെ ഏജന്റിനെ പ്രാപ്‌തമാക്കുന്നു, വിലയേറിയ നിമിഷങ്ങൾ തിരിച്ചറിയുകയും ഞങ്ങളുടെ സമർപ്പിത CLI ഉപയോഗിച്ച് പ്രാദേശിക സംഭരണത്തിലേക്ക് അവ സംരക്ഷിക്കുകയും ചെയ്യുന്നു.",
         card2_title: "സ്വയംഭരണാധികാരമുള്ള മീഡിയ കൈകാര്യം ചെയ്യൽ",
         card2_text: "ഏജന്റ് ഫോട്ടോകൾ, വീഡിയോകൾ, വോയ്‌സ് നോട്ടുകൾ എന്നിവ കണ്ടെത്തുന്നു, തീയതി പ്രകാരം ക്രമീകരിച്ച ഫോൾഡറുകളിലേക്ക് (YYYY-MM-DD) പകർത്തുന്നു, കൂടാതെ നിങ്ങളുടെ ഡിജിറ്റൽ വിവരങ്ങൾ നിങ്ങളുടെ മെഷീനിൽ സുരക്ഷിതമായി തുടരുന്നുവെന്ന് ഉറപ്പാക്കുന്നു.",
         card3_title: "കോഗ്നിറ്റീവ് സംഗ്രഹങ്ങൾ",
         card3_text: "നിങ്ങളുടെ AI ഏജന്റ് സമ്പന്നമായ ചരിത്രങ്ങളും ദൈനംദിന സംഗ്രഹങ്ങളും സൃഷ്ടിക്കുന്നു, കീവേഡുകൾക്ക് പകരം അർത്ഥത്തിലൂടെ സങ്കീർണ്ണമായ സംഭാഷണങ്ങൾ ഓർത്തെടുക്കാൻ നിങ്ങളെ അനുവദിക്കുന്നു.",
         installation: "ഇൻസ്റ്റലേഷൻ",
         step1: "സ്റ്റോറേജ് എഞ്ചിൻ (CLI) ആഗോളതലത്തിൽ ഇൻസ്റ്റാൾ ചെയ്യുക:",
-        step2: "OpenClaw-ൽ സ്കിൽ കോൺഫിഗർ ചെയ്യുക:",
+        step2: "നിങ്ങളുടെ പരിതസ്ഥിതിയിൽ സ്കിൽ കോൺഫിഗർ ചെയ്യുക:",
         step2_text: "നിങ്ങൾ ഇഷ്ടപ്പെടുന്ന ഇൻസ്റ്റാളേഷൻ രീതി തിരഞ്ഞെടുക്കുക:",
-        step2_clawhub: "OpenClaw കമാൻഡ് ലൈൻ വഴി നേരിട്ട് ഇൻസ്റ്റാൾ ചെയ്യുക:",
+        step2_openclaw: "സ്റ്റാൻഡേർഡ് OpenClaw കമാൻഡ് വഴി ഇൻസ്റ്റാൾ ചെയ്യുക:",
+        step2_clawhub: "Clawhub CLI ഉപയോഗിച്ച് നേരിട്ട് ഇൻസ്റ്റാൾ ചെയ്യുക:",
         step2_skills: "പകരമായി, ഓട്ടോമേറ്റഡ് ഇൻസ്റ്റാളർ സ്ക്രിപ്റ്റ് ഉപയോഗിക്കുക:",
         step3: "ബാക്കി നിങ്ങളുടെ ഏജന്റിന് വിട്ടുകൊടുക്കുക:",
         step3_text: "നിങ്ങളുടെ ഏജന്റ് സ്വയമേവ ഓർമ്മകൾ ആർക്കൈവ് ചെയ്യാൻ തുടങ്ങും. നിങ്ങളുടെ പ്രാദേശിക മെമ്മറി നില പരിശോധിക്കാൻ inventory കമാൻഡ് ഉപയോഗിക്കുക:",
@@ -327,9 +357,10 @@
         card3_text: "Ваш ИИ-агент создает подробные хроники и ежедневные сводки, позволяя вам вспоминать сложные разговоры по их смыслу, а не только по ключевым словам.",
         installation: "Установка",
         step1: "Установите движок хранилища (CLI) глобально:",
-        step2: "Настройте навык в OpenClaw:",
+        step2: "Настройте навык в вашей среде:",
         step2_text: "Выберите предпочтительный метод установки:",
-        step2_clawhub: "Установите напрямую через командную строку OpenClaw:",
+        step2_openclaw: "Установите через стандартную команду OpenClaw:",
+        step2_clawhub: "Установите напрямую с помощью Clawhub CLI:",
         step2_skills: "Или используйте скрипт автоматической установки:",
         step3: "Пусть ваш агент позаботится об остальном:",
         step3_text: "Ваш агент автоматически начнет архивировать воспоминания. Используйте команду inventory для аудита состояния вашей локальной памяти:",
