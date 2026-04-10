@@ -13,6 +13,16 @@ fi
 
 echo "--- 🚀 Starting Unified Deployment ---"
 
+# 0. Run QA Tests
+echo "🧪 Running QA Tests..."
+cd remember-when-cli && npm test
+if [ $? -ne 0 ]; then
+  echo "❌ Tests failed! Deployment aborted."
+  exit 1
+fi
+cd ..
+echo "✅ Tests passed."
+
 # 1. Deploy Documentation Web to Firebase
 echo "📦 Deploying Web to Firebase Hosting..."
 firebase deploy --only hosting:remember-when --project platform-2mes4 --non-interactive
