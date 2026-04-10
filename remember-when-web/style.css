@@ -230,6 +230,46 @@ footer {
   font-size: 0.875rem;
 }
 
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #E2E8F0;
+  padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.tab-btn:hover {
+  background: #F1F5F9;
+  color: var(--text);
+}
+
+.tab-btn.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
 @media (max-width: 768px) {
   h1 { font-size: 2.5rem; }
   .bento-grid { grid-template-columns: 1fr; }
@@ -237,4 +277,5 @@ footer {
   .steps { padding: 1.5rem; }
   .nav-bar { padding: 1rem; }
   .breadcrumb { font-size: 0.8rem; }
+  .tabs { flex-direction: column; }
 }

@@ -45,7 +45,8 @@ echo "✅ CLI published to npm."
 # 3. OpenClaw Skill Deployment Phase
 echo "🤖 [3/6] Deploying Skill to Clawhub..."
 cd remember-when-skill
-npx clawhub publish .
+SKILL_VERSION=$(node -e "console.log(require('./package.json').version)")
+npx clawhub publish . --version "$SKILL_VERSION"
 cd ..
 echo "✅ Skill deployed to Clawhub."
 

@@ -5,7 +5,7 @@ description: >
   It allows agents to monitor chat groups, capture memorable 
   content (text, photos, videos), generate context-aware summaries, 
   and persist everything to local storage via the Remember When CLI.
-version: 1.1.4
+version: 1.1.5
 author: 2mes4
 homepage: https://remember-when.agentic.2mes4.com
 metadata:
