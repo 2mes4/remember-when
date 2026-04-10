@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "remember-when",
+      "public": "remember-when-web",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

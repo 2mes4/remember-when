@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remember When - Local Digital Memory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav-bar">
+    <div class="nav-logo">
+      <img src="https://2mes4.com/favicon.ico" alt="" style="height: 24px; vertical-align: middle;"> 
+      <strong>Remember When</strong>
+    </div>
+    <div class="nav-links">
+      <a href="https://2mes4.com" class="btn btn-outline" data-i18n="back_to_2mes4">Back to 2mes4.com</a>
+      <a href="https://github.com/2mes4/remember-when" class="btn btn-primary" data-i18n="github_repo">GitHub Repository</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <div class="lang-selector">
+        <select id="langSelect">
+          <option value="en">English</option>
+          <option value="ca">Català</option>
+          <option value="es">Español</option>
+          <option value="pt">Português</option>
+          <option value="fr">Français</option>
+          <option value="zh">中文</option>
+        </select>
+      </div>
+      <span class="badge" data-i18n="badge">OpenClaw + CLI</span>
+      <h1 data-i18n="title">Remember When</h1>
+      <p class="hero-subtitle" data-i18n="hero_subtitle">A smart system to capture and organize your digital memories directly on your local disk.</p>
+    </header>
+
+    <main>
+      <section class="bento-grid">
+        <div class="card full">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+          </svg>
+          <h3 data-i18n="card1_title">What is Remember When?</h3>
+          <p data-i18n="card1_text">It is a hybrid solution composed of an OpenClaw Agent and a Node.js CLI. The agent acts as your personal archivist in WhatsApp or Telegram groups, detecting memorable moments and automatically saving them to your computer.</p>
+        </div>
+
+        <div class="card">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+          <h3 data-i18n="card2_title">Multimedia Management</h3>
+          <p data-i18n="card2_text">Photos, videos, and voice notes are automatically copied to folders organized by date (YYYY-MM-DD) in your home directory.</p>
+        </div>
+
+        <div class="card">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18c-2.305 0-4.408.867-6 2.292m0-14.25V21" />
+          </svg>
+          <h3 data-i18n="card3_title">Smart Summaries</h3>
+          <p data-i18n="card3_text">The agent doesn't just save files; it generates enriched summaries and daily chronicles so you can search for moments by their meaning, not just by date.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title" data-i18n="installation">Installation</h2>
+        <div class="steps">
+          <div class="step-item">
+            <p><span class="step-num">1.</span> <span data-i18n="step1">Install the storage engine (CLI) globally:</span></p>
+            <pre>cd remember-when-cli
+npm install -g .</pre>
+          </div>
+          <div class="step-item">
+            <p><span class="step-num">2.</span> <span data-i18n="step2">Configure your Skill in OpenClaw:</span></p>
+            <p style="margin-top: 1rem; color: var(--text-muted);" data-i18n="step2_text">You can automatically add this skill to your agent using skills.sh with the following command:</p>
+            <pre>npx skills add https://github.com/2mes4/remember-when --skill remember-when-skill</pre>
+            <p style="margin-top: 0.5rem; color: var(--text-muted); font-size: 0.85rem;" data-i18n="step2_note">(Replace with your repository's final URL if necessary).</p>
+          </div>
+          <div class="step-item">
+            <p><span class="step-num">3.</span> <span data-i18n="step3">Let the magic happen:</span></p>
+            <p style="margin-top: 1rem; color: var(--text-muted);" data-i18n="step3_text">The agent will start saving entries. You can check the inventory of what's missing with the command:</p>
+            <pre>remember-when inventory</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p data-i18n="footer">Remember When &copy; 2026 - Your memory, in your control.</p>
+    </footer>
+  </div>
+
+  <script>
+    const i18n = {
+      en: {
+        back_to_2mes4: "Back to 2mes4.com",
+        github_repo: "GitHub Repository",
+        badge: "OpenClaw + CLI",
+        title: "Remember When",
+        hero_subtitle: "A smart system to capture and organize your digital memories directly on your local disk.",
+        card1_title: "What is Remember When?",
+        card1_text: "It is a hybrid solution composed of an OpenClaw Agent and a Node.js CLI. The agent acts as your personal archivist in WhatsApp or Telegram groups, detecting memorable moments and automatically saving them to your computer.",
+        card2_title: "Multimedia Management",
+        card2_text: "Photos, videos, and voice notes are automatically copied to folders organized by date (YYYY-MM-DD) in your home directory.",
+        card3_title: "Smart Summaries",
+        card3_text: "The agent doesn't just save files; it generates enriched summaries and daily chronicles so you can search for moments by their meaning, not just by date.",
+        installation: "Installation",
+        step1: "Install the storage engine (CLI) globally:",
+        step2: "Configure your Skill in OpenClaw:",
+        step2_text: "You can automatically add this skill to your agent using skills.sh with the following command:",
+        step2_note: "(Replace with your repository's final URL if necessary).",
+        step3: "Let the magic happen:",
+        step3_text: "The agent will start saving entries. You can check the inventory of what's missing with the command:",
+        footer: "Remember When © 2026 - Your memory, in your control."
+      },
+      ca: {
+        back_to_2mes4: "Tornar a 2mes4.com",
+        github_repo: "Repositori GitHub",
+        badge: "OpenClaw + CLI",
+        title: "Remember When",
+        hero_subtitle: "Un sistema intel·ligent per capturar i organitzar els teus records digitals directament al teu disc local.",
+        card1_title: "¿Què és Remember When?",
+        card1_text: "És una solució híbrida composta per un Agent d'OpenClaw i un CLI de Node.js. L'agent actua com el teu arxiver personal en grups de WhatsApp o Telegram, detectant moments memorables i guardant-los automàticament al teu ordinador.",
+        card2_title: "Gestió Multimèdia",
+        card2_text: "Fotos, vídeos i notes de veu es copien automàticament a carpetes organitzades per data (YYYY-MM-DD) al teu directori home.",
+        card3_title: "Resums Intel·ligents",
+        card3_text: "L'agent no només guarda fitxers; genera resums enriquits i cròniques diàries perquè puguis buscar moments pel seu significat, no només per data.",
+        installation: "Instal·lació",
+        step1: "Instal·la el motor d'emmagatzematge (CLI) globalment:",
+        step2: "Configura el teu Skill a OpenClaw:",
+        step2_text: "Pots afegir aquest skill automàticament al teu agent utilitzant skills.sh amb la següent comanda:",
+        step2_note: "(Substitueix per la URL final del teu repositori si cal).",
+        step3: "Deixa que la màgia passi:",
+        step3_text: "L'agent començarà a guardar entrades. Pots consultar l'inventari del que falta amb la comanda:",
+        footer: "Remember When © 2026 - La teva memòria, sota el teu control."
+      },
+      es: {
+        back_to_2mes4: "Volver a 2mes4.com",
+        github_repo: "Repositorio GitHub",
+        badge: "OpenClaw + CLI",
+        title: "Remember When",
+        hero_subtitle: "Un sistema inteligente para capturar y organizar tus recuerdos digitales directamente en tu disco local.",
+        card1_title: "¿Qué es Remember When?",
+        card1_text: "Es una solución híbrida compuesta por un Agente de OpenClaw y un CLI de Node.js. El agente actúa como tu archivero personal en grupos de WhatsApp o Telegram, detectando momentos memorables y guardándolos automáticamente en tu ordenador.",
+        card2_title: "Gestión Multimedia",
+        card2_text: "Fotos, vídeos y notas de voz se copian automáticamente a carpetas organizadas por fecha (YYYY-MM-DD) en tu directorio home.",
+        card3_title: "Resúmenes Inteligentes",
+        card3_text: "El agente no solo guarda archivos; genera resúmenes enriquecidos y crónicas diarias para que puedas buscar momentos por su significado, no solo por fecha.",
+        installation: "Instalación",
+        step1: "Instala el motor de almacenamiento (CLI) globalmente:",
+        step2: "Configura tu Skill en OpenClaw:",
+        step2_text: "Puedes añadir este skill automáticamente a tu agente usando skills.sh con el siguiente comando:",
+        step2_note: "(Sustituye por la URL final de tu repositorio si es necesario).",
+        step3: "Deja que la magia ocurra:",
+        step3_text: "El agente empezará a guardar entradas. Puedes consultar el inventario de lo que falta con el comando:",
+        footer: "Remember When © 2026 - Tu memoria, bajo tu control."
+      },
+      pt: {
+        back_to_2mes4: "Voltar para 2mes4.com",
+        github_repo: "Repositório GitHub",
+        badge: "OpenClaw + CLI",
+        title: "Remember When",
+        hero_subtitle: "Um sistema inteligente para capturar e organizar as suas memórias digitais diretamente no seu disco local.",
+        card1_title: "O que é o Remember When?",
+        card1_text: "É uma solução híbrida composta por um Agente OpenClaw e um CLI Node.js. O agente atua como o seu arquivista pessoal em grupos de WhatsApp ou Telegram, detetando momentos memoráveis e guardando-os automaticamente no seu computador.",
+        card2_title: "Gestão Multimédia",
+        card2_text: "Fotos, vídeos e notas de voz são copiados automaticamente para pastas organizadas por data (AAAA-MM-DD) na sua diretoria pessoal.",
+        card3_title: "Resumos Inteligentes",
+        card3_text: "O agente não se limita a guardar ficheiros; gera resumos enriquecidos e crónicas diárias para que possa procurar momentos pelo seu significado, não apenas pela data.",
+        installation: "Instalação",
+        step1: "Instale o motor de armazenamento (CLI) globalmente:",
+        step2: "Configure a sua Skill no OpenClaw:",
+        step2_text: "Pode adicionar esta skill automaticamente ao seu agente usando o skills.sh com o seguinte comando:",
+        step2_note: "(Substitua pelo URL final do seu repositório, se necessário).",
+        step3: "Deixe a magia acontecer:",
+        step3_text: "O agente começará a guardar entradas. Pode verificar o inventário do que falta com o comando:",
+        footer: "Remember When © 2026 - A sua memória, sob o seu controlo."
+      },
+      fr: {
+        back_to_2mes4: "Retour à 2mes4.com",
+        github_repo: "Dépôt GitHub",
+        badge: "OpenClaw + CLI",
+        title: "Remember When",
+        hero_subtitle: "Un système intelligent pour capturer et organiser vos souvenirs numériques directement sur votre disque local.",
+        card1_title: "Qu'est-ce que Remember When ?",
+        card1_text: "C'est une solution hybride composée d'un Agent OpenClaw et d'un CLI Node.js. L'agent agit comme votre archiviste personnel dans les groupes WhatsApp ou Telegram, détectant les moments mémorables et les sauvegardant automatiquement sur votre ordinateur.",
+        card2_title: "Gestion Multimédia",
+        card2_text: "Les photos, vidéos et notes vocales sont automatiquement copiées dans des dossiers organisés par date (AAAA-MM-DD) dans votre répertoire personnel.",
+        card3_title: "Résumés Intelligents",
+        card3_text: "L'agent ne se contente pas de sauvegarder des fichiers ; il génère des résumés enrichis et des chroniques quotidiennes pour que vous puissiez rechercher des moments par leur sens, pas seulement par date.",
+        installation: "Installation",
+        step1: "Installez le moteur de stockage (CLI) globalement :",
+        step2: "Configurez votre Skill dans OpenClaw :",
+        step2_text: "Vous pouvez ajouter automatiquement cette skill à votre agent en utilisant skills.sh avec la commande suivante :",
+        step2_note: "(Remplacez par l'URL finale de votre dépôt si nécessaire).",
+        step3: "Laissez la magie opérer :",
+        step3_text: "L'agent commencera à enregistrer des entrées. Vous pouvez vérifier l'inventaire de ce qui manque avec la commande :",
+        footer: "Remember When © 2026 - Votre mémoire, sous votre contrôle."
+      },
+      zh: {
+        back_to_2mes4: "返回 2mes4.com",
+        github_repo: "GitHub 仓库",
+        badge: "OpenClaw + CLI",
+        title: "Remember When",
+        hero_subtitle: "一个直接在本地磁盘上捕获和组织数字记忆的智能系统。",
+        card1_title: "什么是 Remember When？",
+        card1_text: "它是一个由 OpenClaw 代理和 Node.js CLI 组成的混合解决方案。该代理在 WhatsApp 或 Telegram 群组中担任您的个人档案管理员，检测难忘时刻并将其自动保存到您的计算机中。",
+        card2_title: "多媒体管理",
+        card2_text: "照片、视频和语音注释会自动复制到您主目录下按日期（YYYY-MM-DD）组织的文件夹中。",
+        card3_title: "智能摘要",
+        card3_text: "代理不仅保存文件；它还会生成丰富的摘要和每日纪事，以便您可以按其含义而不仅仅是按日期搜索时刻。",
+        installation: "安装",
+        step1: "全局安装存储引擎 (CLI)：",
+        step2: "在 OpenClaw 中配置您的技能：",
+        step2_text: "您可以使用以下命令通过 skills.sh 自动将此技能添加到您的代理：",
+        step2_note: "（如有必要，请替换为您存储库的最终 URL）。",
+        step3: "见证奇迹的发生：",
+        step3_text: "代理将开始保存条目。您可以使用以下命令检查缺少的库存：",
+        footer: "Remember When © 2026 - 您的记忆，由您控制。"
+      }
+    };
+
+    function updateLanguage(lang) {
+      const texts = i18n[lang] || i18n.en;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (texts[key]) {
+          el.innerText = texts[key];
+        }
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('langSelect').value = lang;
+    }
+
+    // Detection
+    const userLang = (navigator.language || navigator.userLanguage).split('-')[0];
+    const initialLang = i18n[userLang] ? userLang : 'en';
+    
+    updateLanguage(initialLang);
+
+    document.getElementById('langSelect').addEventListener('change', (e) => {
+      updateLanguage(e.target.value);
+    });
+  </script>
+</body>
+</html>

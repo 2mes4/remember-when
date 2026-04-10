@@ -1,0 +1,22 @@
+{
+  "name": "remember-when-cli",
+  "version": "1.0.0",
+  "description": "Local storage CLI for digital memories",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "remember-when": "./index.js"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

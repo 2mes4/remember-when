@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "production": "platform-2mes4"
+  },
+  "targets": {
+    "platform-2mes4": {
+      "hosting": {
+        "remember-when": [
+          "platform-2mes4-remember-when"
+        ]
+      }
+    }
+  }
+}
