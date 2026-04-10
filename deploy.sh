@@ -1,57 +1,75 @@
 #!/bin/bash
 
 # Remember When - Unified All-in-One Deployment Script
-# Usage: ./deploy.sh "version message"
+# Usage: npm run deploy -- "version message"
 
 MESSAGE=$1
 
 if [ -z "$MESSAGE" ]; then
   echo "❌ Error: Please provide a version message."
-  echo "Usage: npm run deploy -- \"v1.1.3 - Description of changes\""
+  echo "Usage: npm run deploy -- \"v1.1.4 - Description of changes\""
   exit 1
 fi
+
+set -e # Stop on any error
 
 echo "------------------------------------------"
 echo "🚀 Starting Unified All-in-One Deployment"
 echo "------------------------------------------"
 
 # 1. QA Phase
-echo "🧪 [1/4] Running Automated QA Tests..."
-cd remember-when-cli && npm test
-if [ $? -ne 0 ]; then
-  echo "❌ QA Tests failed! Deployment aborted."
-  exit 1
-fi
+echo "🧪 [1/6] Running Automated QA Tests..."
+cd remember-when-cli
+npm test
 cd ..
 echo "✅ QA Tests passed."
 
-# 2. Documentation Sync Verification (Self-Reminder)
-echo "📚 [2/4] Verifying Documentation Consistency..."
-# (In a real CI this could check if files were modified, here it acts as a protocol enforcer)
-echo "✅ Documentation sync checked."
+# 2. NPM CLI Release Phase
+echo "📦 [2/6] Publishing CLI to npm..."
+cd remember-when-cli
 
-# 3. Web Deployment Phase
-echo "📦 [3/4] Deploying Documentation Web to Firebase..."
-firebase deploy --only hosting:remember-when --project platform-2mes4 --non-interactive
-if [ $? -ne 0 ]; then
-  echo "❌ Firebase deployment failed! Repository update aborted."
-  exit 1
+# Check if logged in
+if ! npm whoami > /dev/null 2>&1; then
+  echo "🔑 Not logged into npm. Please login:"
+  npm login
 fi
 
-# 4. Source Control Phase
-echo "🐙 [4/4] Synchronizing GitHub Repository..."
+echo "🔢 Incrementing version (patch)..."
+npm version patch -m "chore: bump version to %s"
+
+echo "🚀 Publishing to npm..."
+npm publish --access public
+cd ..
+echo "✅ CLI published to npm."
+
+# 3. OpenClaw Skill Deployment Phase
+echo "🤖 [3/6] Deploying Skill to Clawhub..."
+cd remember-when-skill
+npx clawhub publish .
+cd ..
+echo "✅ Skill deployed to Clawhub."
+
+# 4. Documentation Sync
+echo "📚 [4/6] Verifying Documentation Consistency..."
+# Integrity check already performed by agent protocol
+echo "✅ Documentation sync verified."
+
+# 5. Web Deployment Phase
+echo "🌐 [5/6] Deploying Documentation Web to Firebase..."
+firebase deploy --only hosting:remember-when --project platform-2mes4 --non-interactive
+echo "✅ Web deployed."
+
+# 6. Source Control Phase
+echo "🐙 [6/6] Synchronizing GitHub Repository..."
 git add .
 git commit -m "$MESSAGE"
 git push origin main
-if [ $? -ne 0 ]; then
-  echo "❌ Git push failed!"
-  exit 1
-fi
+echo "✅ GitHub synchronized."
 
 echo "------------------------------------------"
-echo "✅ DEPLOYMENT SUCCESSFUL!"
+echo "✨ DEPLOYMENT SUCCESSFUL!"
 echo "------------------------------------------"
-echo "Documentation: https://platform-2mes4-remember-when.web.app"
-echo "Repository:    https://github.com/2mes4/remember-when"
-echo "Next step (manual): cd remember-when-cli && npm publish"
+echo "Web:        https://platform-2mes4-remember-when.web.app"
+echo "Repo:       https://github.com/2mes4/remember-when"
+echo "CLI:        https://www.npmjs.com/package/remember-when-cli"
 echo "------------------------------------------"

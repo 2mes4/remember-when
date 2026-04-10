@@ -3,6 +3,10 @@ import { program } from 'commander';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const pkg = require('./package.json');
 
 export function getStorageRoot() {
   return process.env.REMEMBER_WHEN_TEST_DIR 
@@ -105,7 +109,7 @@ if (isMain) {
   program
     .name('remember-when')
     .description('Local storage system for your digital memories')
-    .version('1.1.1');
+    .version(pkg.version);
 
   program.command('add')
     .description('Registers a new memory entry')

@@ -16,7 +16,7 @@ The system follows a decoupled architecture where intelligence and persistence a
 
 - **Intelligence Layer (`/remember-when-skill`)**: An OpenClaw Skill that instructs agents to act as archivists, synthesizing conversations and media.
 - **Persistence Layer (`/remember-when-cli`)**: A Node.js CLI that manages the physical storage, folder organization, and the master `timeline.json`.
-- **Documentation Layer (`/remember-when-web`)**: A multi-language documentation portal deployed on Firebase.
+- **Documentation Layer (`/remember-when-web`)**: A multi-language documentation portal deployed at [https://remember-when.agentic.2mes4.com](https://remember-when.agentic.2mes4.com).
 
 ## 🚀 Getting Started
 

@@ -68,9 +68,12 @@ npm run deploy -- "vX.Y.Z - Detailed description of changes"
 
 This command automatically:
 1. Executes all QA tests (Unit & E2E).
-2. Deploys the documentation web to Firebase.
-3. Synchronizes all documentation and code with GitHub.
-4. Validates the project state.
+2. Increments the CLI version (patch) and publishes to **npm**.
+3. Deploys the Skill to **Clawhub**.
+4. Deploys the documentation web to **Firebase**.
+5. Synchronizes all documentation and code with **GitHub**.
+
+*Note: Ensure you are logged into npm and Clawhub before running the deployment.*
 
 If any step fails, the deployment is aborted, and you must fix the issue before retrying.
 

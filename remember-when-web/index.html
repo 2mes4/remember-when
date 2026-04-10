@@ -3,23 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Remember When - Local Digital Memory</title>
+  <title>Remember When - AI Agent Skill</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav class="nav-bar">
-    <div class="nav-logo">
-      <img src="https://2mes4.com/favicon.ico" alt="" style="height: 24px; vertical-align: middle;"> 
-      <strong>Remember When</strong>
+    <div class="breadcrumb">
+      <a href="https://2mes4.com">2mes4.com</a>
+      <span class="separator">/</span>
+      <span class="current">
+        <img src="logo.svg" alt="" class="logo-small"> 
+        Remember When
+      </span>
     </div>
-    <div class="nav-links">
-      <a href="https://2mes4.com" class="btn btn-outline" data-i18n="back_to_2mes4">Back to 2mes4.com</a>
-      <a href="https://github.com/2mes4/remember-when" class="btn btn-primary" data-i18n="github_repo">GitHub Repository</a>
-    </div>
-  </nav>
-
-  <div class="container">
-    <header>
+    
+    <div class="nav-actions">
       <div class="lang-selector">
         <select id="langSelect">
           <option value="en">English</option>
@@ -28,11 +26,24 @@
           <option value="pt">Português</option>
           <option value="fr">Français</option>
           <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="ar">العربية</option>
+          <option value="hi">हिन्दी</option>
+          <option value="ml">മലയാളം</option>
+          <option value="ru">Русский</option>
         </select>
       </div>
-      <span class="badge" data-i18n="badge">OpenClaw + CLI</span>
+      <a href="https://github.com/2mes4/remember-when" class="github-link" title="GitHub Repository">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+      </a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <span class="badge" data-i18n="badge">Agentic Skill</span>
       <h1 data-i18n="title">Remember When</h1>
-      <p class="hero-subtitle" data-i18n="hero_subtitle">A smart system to capture and organize your digital memories directly on your local disk.</p>
+      <p class="hero-subtitle" data-i18n="hero_subtitle">Create a group and start sharing; your agent will create a log of what happens. Use it for work, travels, or friend groups... It's easy, fast, and free.</p>
     </header>
 
     <main>
@@ -41,24 +52,24 @@
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
           </svg>
-          <h3 data-i18n="card1_title">What is Remember When?</h3>
-          <p data-i18n="card1_text">It is a hybrid solution composed of an OpenClaw Agent and a Node.js CLI. The agent acts as your personal archivist in WhatsApp or Telegram groups, detecting memorable moments and automatically saving them to your computer.</p>
+          <h3 data-i18n="card1_title">What is this AI Skill?</h3>
+          <p data-i18n="card1_text">It is a professional toolkit designed for AI Agents (OpenClaw). It enables your agent to act as a proactive digital archivist within WhatsApp or Telegram groups, identifying valuable moments and persisting them to local storage using our dedicated CLI.</p>
         </div>
 
         <div class="card">
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
           </svg>
-          <h3 data-i18n="card2_title">Multimedia Management</h3>
-          <p data-i18n="card2_text">Photos, videos, and voice notes are automatically copied to folders organized by date (YYYY-MM-DD) in your home directory.</p>
+          <h3 data-i18n="card2_title">Autonomous Media Handling</h3>
+          <p data-i18n="card2_text">The agent detects photos, videos, and voice notes, copies them to date-organized folders (YYYY-MM-DD), and ensures your data stays private on your machine.</p>
         </div>
 
         <div class="card">
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18c-2.305 0-4.408.867-6 2.292m0-14.25V21" />
           </svg>
-          <h3 data-i18n="card3_title">Smart Summaries</h3>
-          <p data-i18n="card3_text">The agent doesn't just save files; it generates enriched summaries and daily chronicles so you can search for moments by their meaning, not just by date.</p>
+          <h3 data-i18n="card3_title">Cognitive Summaries</h3>
+          <p data-i18n="card3_text">Your AI agent generates enriched chronicles and daily summaries, allowing you to recall complex conversations through semantic meaning rather than just keywords.</p>
         </div>
       </section>
 
@@ -67,18 +78,16 @@
         <div class="steps">
           <div class="step-item">
             <p><span class="step-num">1.</span> <span data-i18n="step1">Install the storage engine (CLI) globally:</span></p>
-            <pre>cd remember-when-cli
-npm install -g .</pre>
+            <pre>npm install -g remember-when-cli</pre>
           </div>
           <div class="step-item">
-            <p><span class="step-num">2.</span> <span data-i18n="step2">Configure your Skill in OpenClaw:</span></p>
-            <p style="margin-top: 1rem; color: var(--text-muted);" data-i18n="step2_text">You can automatically add this skill to your agent using skills.sh with the following command:</p>
-            <pre>npx skills add https://github.com/2mes4/remember-when --skill remember-when-skill</pre>
-            <p style="margin-top: 0.5rem; color: var(--text-muted); font-size: 0.85rem;" data-i18n="step2_note">(Replace with your repository's final URL if necessary).</p>
+            <p><span class="step-num">2.</span> <span data-i18n="step2">Configure the Skill in OpenClaw:</span></p>
+            <p style="margin-top: 1rem; color: var(--text-muted);" data-i18n="step2_text">Enable your AI agent to use this skill by installing it via the OpenClaw command line:</p>
+            <pre>openclaw install remember-when-skill</pre>
           </div>
           <div class="step-item">
-            <p><span class="step-num">3.</span> <span data-i18n="step3">Let the magic happen:</span></p>
-            <p style="margin-top: 1rem; color: var(--text-muted);" data-i18n="step3_text">The agent will start saving entries. You can check the inventory of what's missing with the command:</p>
+            <p><span class="step-num">3.</span> <span data-i18n="step3">Let your Agent handle the rest:</span></p>
+            <p style="margin-top: 1rem; color: var(--text-muted);" data-i18n="step3_text">Your agent will automatically start archiving memories. Use the inventory command to audit your local memory state:</p>
             <pre>remember-when inventory</pre>
           </div>
         </div>
@@ -86,123 +95,106 @@ npm install -g .</pre>
     </main>
 
     <footer>
-      <p data-i18n="footer">Remember When &copy; 2026 - Your memory, in your control.</p>
+      <p data-i18n="footer">Remember When &copy; 2026 - Powered by AI Agents, controlled by you.</p>
     </footer>
   </div>
 
   <script>
     const i18n = {
       en: {
-        back_to_2mes4: "Back to 2mes4.com",
-        github_repo: "GitHub Repository",
-        badge: "OpenClaw + CLI",
+        badge: "Agentic Skill",
         title: "Remember When",
-        hero_subtitle: "A smart system to capture and organize your digital memories directly on your local disk.",
-        card1_title: "What is Remember When?",
-        card1_text: "It is a hybrid solution composed of an OpenClaw Agent and a Node.js CLI. The agent acts as your personal archivist in WhatsApp or Telegram groups, detecting memorable moments and automatically saving them to your computer.",
-        card2_title: "Multimedia Management",
-        card2_text: "Photos, videos, and voice notes are automatically copied to folders organized by date (YYYY-MM-DD) in your home directory.",
-        card3_title: "Smart Summaries",
-        card3_text: "The agent doesn't just save files; it generates enriched summaries and daily chronicles so you can search for moments by their meaning, not just by date.",
+        hero_subtitle: "Create a group and start sharing; your agent will create a log of what happens. Use it for work, travels, or friend groups... It's easy, fast, and free.",
+        card1_title: "What is this AI Skill?",
+        card1_text: "It is a professional toolkit designed for AI Agents (OpenClaw). It enables your agent to act as a proactive digital archivist within WhatsApp or Telegram groups, identifying valuable moments and persisting them to local storage using our dedicated CLI.",
+        card2_title: "Autonomous Media Handling",
+        card2_text: "The agent detects photos, videos, and voice notes, copies them to date-organized folders (YYYY-MM-DD), and ensures your data stays private on your machine.",
+        card3_title: "Cognitive Summaries",
+        card3_text: "Your AI agent generates enriched chronicles and daily summaries, allowing you to recall complex conversations through semantic meaning rather than just keywords.",
         installation: "Installation",
         step1: "Install the storage engine (CLI) globally:",
-        step2: "Configure your Skill in OpenClaw:",
-        step2_text: "You can automatically add this skill to your agent using skills.sh with the following command:",
-        step2_note: "(Replace with your repository's final URL if necessary).",
-        step3: "Let the magic happen:",
-        step3_text: "The agent will start saving entries. You can check the inventory of what's missing with the command:",
-        footer: "Remember When © 2026 - Your memory, in your control."
+        step2: "Configure the Skill in OpenClaw:",
+        step2_text: "Enable your AI agent to use this skill by installing it via the OpenClaw command line:",
+        step3: "Let your Agent handle the rest:",
+        step3_text: "Your agent will automatically start archiving memories. Use the inventory command to audit your local memory state:",
+        footer: "Remember When © 2026 - Powered by AI Agents, controlled by you."
       },
       ca: {
-        back_to_2mes4: "Tornar a 2mes4.com",
-        github_repo: "Repositori GitHub",
-        badge: "OpenClaw + CLI",
+        badge: "Skill Agentic",
         title: "Remember When",
-        hero_subtitle: "Un sistema intel·ligent per capturar i organitzar els teus records digitals directament al teu disc local.",
-        card1_title: "¿Què és Remember When?",
-        card1_text: "És una solució híbrida composta per un Agent d'OpenClaw i un CLI de Node.js. L'agent actua com el teu arxiver personal en grups de WhatsApp o Telegram, detectant moments memorables i guardant-los automàticament al teu ordinador.",
-        card2_title: "Gestió Multimèdia",
-        card2_text: "Fotos, vídeos i notes de veu es copien automàticament a carpetes organitzades per data (YYYY-MM-DD) al teu directori home.",
-        card3_title: "Resums Intel·ligents",
-        card3_text: "L'agent no només guarda fitxers; genera resums enriquits i cròniques diàries perquè puguis buscar moments pel seu significat, no només per data.",
+        hero_subtitle: "Crea un grup i comença a compartir; el teu agent et farà una bitàcola del que passa. Utilitza-ho a la feina, en els viatges o en els grups d'amics... És fàcil, ràpid i gratuït.",
+        card1_title: "Què és aquesta Skill d'IA?",
+        card1_text: "És un conjunt d'eines professionals dissenyat per a Agents d'IA (OpenClaw). Permet que el teu agent actuï com un arxiver digital proactiu en grups de WhatsApp o Telegram, identificant moments valuosos i guardant-los en emmagatzematge local mitjançant el nostre CLI dedicat.",
+        card2_title: "Gestió Autònoma de Multimèdia",
+        card2_text: "L'agent detecta fotos, vídeos i notes de veu, els copia a carpetes organitzades per data (YYYY-MM-DD) i garanteix que les teves dades es mantinguin privades a la teva màquina.",
+        card3_title: "Resums Cognitius",
+        card3_text: "El teu agent d'IA genera cròniques enriquides i resums diaris, permetent-te recordar converses complexes a través del significat semàntic en lloc de només paraules clau.",
         installation: "Instal·lació",
         step1: "Instal·la el motor d'emmagatzematge (CLI) globalment:",
-        step2: "Configura el teu Skill a OpenClaw:",
-        step2_text: "Pots afegir aquest skill automàticament al teu agent utilitzant skills.sh amb la següent comanda:",
-        step2_note: "(Substitueix per la URL final del teu repositori si cal).",
-        step3: "Deixa que la màgia passi:",
-        step3_text: "L'agent començarà a guardar entrades. Pots consultar l'inventari del que falta amb la comanda:",
-        footer: "Remember When © 2026 - La teva memòria, sota el teu control."
+        step2: "Configura la Skill a OpenClaw:",
+        step2_text: "Permet que el teu agent d'IA utilitzi aquesta habilitat instal·lant-la mitjançant la línia de comandes d'OpenClaw:",
+        step3: "Deixa que el teu Agent s'encarregui de la resta:",
+        step3_text: "El teu agent començarà a arxivar records automàticament. Utilitza la comanda inventory per auditar l'estat de la teva memòria local:",
+        footer: "Remember When © 2026 - Impulsat per Agents d'IA, controlat per tu."
       },
       es: {
-        back_to_2mes4: "Volver a 2mes4.com",
-        github_repo: "Repositorio GitHub",
-        badge: "OpenClaw + CLI",
+        badge: "Skill Agentic",
         title: "Remember When",
-        hero_subtitle: "Un sistema inteligente para capturar y organizar tus recuerdos digitales directamente en tu disco local.",
-        card1_title: "¿Qué es Remember When?",
-        card1_text: "Es una solución híbrida compuesta por un Agente de OpenClaw y un CLI de Node.js. El agente actúa como tu archivero personal en grupos de WhatsApp o Telegram, detectando momentos memorables y guardándolos automáticamente en tu ordenador.",
-        card2_title: "Gestión Multimedia",
-        card2_text: "Fotos, vídeos y notas de voz se copian automáticamente a carpetas organizadas por fecha (YYYY-MM-DD) en tu directorio home.",
-        card3_title: "Resúmenes Inteligentes",
-        card3_text: "El agente no solo guarda archivos; genera resúmenes enriquecidos y crónicas diarias para que puedas buscar momentos por su significado, no solo por fecha.",
+        hero_subtitle: "Crea un grupo y empieza a compartir que tu agente os hará una bitácora de lo que sucede. Úsalo en el trabajo, en los viajes o en los grupos de amigos... Es fácil, rápido y es gratis.",
+        card1_title: "¿Qué es esta Skill de IA?",
+        card1_text: "Es un conjunto de herramientas profesionales diseñado para Agentes de IA (OpenClaw). Permite que tu agente actúe como un archivero digital proactivo en grupos de WhatsApp o Telegram, identificando momentos valiosos y guardándolos en almacenamiento local mediante nuestro CLI dedicado.",
+        card2_title: "Gestión Autónoma de Multimedia",
+        card2_text: "El agente detecta fotos, vídeos y notas de voz, los copia a carpetas organizadas por fecha (YYYY-MM-DD) y garantiza que tus datos se mantengan privados en tu máquina.",
+        card3_title: "Resúmenes Cognitivos",
+        card3_text: "Tu agente de IA genera crónicas enriquecidas y resúmenes diarios, permitiéndote recordar conversaciones complejas a través del significado semántico en lugar de solo palabras clave.",
         installation: "Instalación",
         step1: "Instala el motor de almacenamiento (CLI) globalmente:",
-        step2: "Configura tu Skill en OpenClaw:",
-        step2_text: "Puedes añadir este skill automáticamente a tu agente usando skills.sh con el siguiente comando:",
-        step2_note: "(Sustituye por la URL final de tu repositorio si es necesario).",
-        step3: "Deja que la magia ocurra:",
-        step3_text: "El agente empezará a guardar entradas. Puedes consultar el inventario de lo que falta con el comando:",
-        footer: "Remember When © 2026 - Tu memoria, bajo tu control."
+        step2: "Configura la Skill en OpenClaw:",
+        step2_text: "Permite que tu agente de IA use esta habilidad instalándola mediante la línea de comandos de OpenClaw:",
+        step3: "Deja que tu Agente se encargue del resto:",
+        step3_text: "Tu agente comenzará a archivar recuerdos automáticamente. Usa el comando inventory para auditar el estado de tu memoria local:",
+        footer: "Remember When © 2026 - Impulsado por Agentes de IA, controlado por ti."
       },
       pt: {
-        back_to_2mes4: "Voltar para 2mes4.com",
-        github_repo: "Repositório GitHub",
-        badge: "OpenClaw + CLI",
+        badge: "Skill Agêntica",
         title: "Remember When",
-        hero_subtitle: "Um sistema inteligente para capturar e organizar as suas memórias digitais diretamente no seu disco local.",
-        card1_title: "O que é o Remember When?",
-        card1_text: "É uma solução híbrida composta por um Agente OpenClaw e um CLI Node.js. O agente atua como o seu arquivista pessoal em grupos de WhatsApp ou Telegram, detetando momentos memoráveis e guardando-os automaticamente no seu computador.",
-        card2_title: "Gestão Multimédia",
-        card2_text: "Fotos, vídeos e notas de voz são copiados automaticamente para pastas organizadas por data (AAAA-MM-DD) na sua diretoria pessoal.",
-        card3_title: "Resumos Inteligentes",
-        card3_text: "O agente não se limita a guardar ficheiros; gera resumos enriquecidos e crónicas diárias para que possa procurar momentos pelo seu significado, não apenas pela data.",
+        hero_subtitle: "Crie um grupo e comece a compartilhar; o seu agente criará um diário do que acontece. Use no trabalho, em viagens ou em grupos de amigos... É fácil, rápido e grátis.",
+        card1_title: "O que é esta Skill de IA?",
+        card1_text: "É um conjunto de ferramentas profissionais concebido para Agentes de IA (OpenClaw). Permite que o seu agente atue como um arquivista digital proativo em grupos de WhatsApp ou Telegram, identificando momentos valiosos e guardando-os em armazenamento local através do nosso CLI dedicado.",
+        card2_title: "Gestão Autónoma de Multimédia",
+        card2_text: "O agente deteta fotos, vídeos e notas de voz, copia-os para pastas organizadas por data (AAAA-MM-DD) e garante que os seus dados permanecem privados na sua máquina.",
+        card3_title: "Resumos Cognitivos",
+        card3_text: "O seu agente de IA gera crónicas enriquecidas e resumos diários, permitindo-lhe recordar conversas complexas através do significado semântico em vez de apenas palavras-chave.",
         installation: "Instalação",
         step1: "Instale o motor de armazenamento (CLI) globalmente:",
-        step2: "Configure a sua Skill no OpenClaw:",
-        step2_text: "Pode adicionar esta skill automaticamente ao seu agente usando o skills.sh com o seguinte comando:",
-        step2_note: "(Substitua pelo URL final do seu repositório, se necessário).",
-        step3: "Deixe a magia acontecer:",
-        step3_text: "O agente começará a guardar entradas. Pode verificar o inventário do que falta com o comando:",
-        footer: "Remember When © 2026 - A sua memória, sob o seu controlo."
+        step2: "Configure a Skill no OpenClaw:",
+        step2_text: "Permita que o seu agente de IA utilize esta skill instalando-a através da linha de comandos do OpenClaw:",
+        step3: "Deixe o seu Agente tratar do resto:",
+        step3_text: "O seu agente começará a arquivar memórias automaticamente. Utilize o comando inventory para auditar o estado da sua memória local:",
+        footer: "Remember When © 2026 - Impulsionado por Agentes de IA, controlado por si."
       },
       fr: {
-        back_to_2mes4: "Retour à 2mes4.com",
-        github_repo: "Dépôt GitHub",
-        badge: "OpenClaw + CLI",
+        badge: "Skill Agentique",
         title: "Remember When",
-        hero_subtitle: "Un système intelligent pour capturer et organiser vos souvenirs numériques directement sur votre disque local.",
-        card1_title: "Qu'est-ce que Remember When ?",
-        card1_text: "C'est une solution hybride composée d'un Agent OpenClaw et d'un CLI Node.js. L'agent agit comme votre archiviste personnel dans les groupes WhatsApp ou Telegram, détectant les moments mémorables et les sauvegardant automatiquement sur votre ordinateur.",
-        card2_title: "Gestion Multimédia",
-        card2_text: "Les photos, vidéos et notes vocales sont automatiquement copiées dans des dossiers organisés par date (AAAA-MM-DD) dans votre répertoire personnel.",
+        hero_subtitle: "Créez un groupe et commencez à partager ; votre agent créera un journal de ce qui se passe. Utilisez-le au travail, en voyage ou dans des groupes d'amis... C'est facile, rapide et gratuit.",
+        card1_title: "Qu'est-ce que cette Skill d'IA ?",
+        card1_text: "Il s'agit d'une boîte d'outils professionnelle conçue pour les Agents d'IA (OpenClaw). Elle permet à votre agent d'agir comme un archiviste numérique proactif dans les groupes WhatsApp ou Telegram, en identifiant les moments précieux et en les sauvegardant localement via notre CLI dédié.",
+        card2_title: "Gestion Autonome des Médias",
+        card2_text: "L'agent détecte les photos, vidéos et notes vocales, les copie dans des dossiers organisés par date (AAAA-MM-DD) et garantit que vos données restent privées sur votre machine.",
         card3_title: "Résumés Intelligents",
-        card3_text: "L'agent ne se contente pas de sauvegarder des fichiers ; il génère des résumés enrichis et des chroniques quotidiennes pour que vous puissiez rechercher des moments par leur sens, pas seulement par date.",
+        card3_text: "Votre agent d'IA génère des chroniques enrichies et des résumés quotidiens, vous permettant de vous remémorer des conversations complexes grâce à leur sens sémantique plutôt qu'à de simples mots-clés.",
         installation: "Installation",
         step1: "Installez le moteur de stockage (CLI) globalement :",
-        step2: "Configurez votre Skill dans OpenClaw :",
-        step2_text: "Vous pouvez ajouter automatiquement cette skill à votre agent en utilisant skills.sh avec la commande suivante :",
-        step2_note: "(Remplacez par l'URL finale de votre dépôt si nécessaire).",
-        step3: "Laissez la magie opérer :",
-        step3_text: "L'agent commencera à enregistrer des entrées. Vous pouvez vérifier l'inventaire de ce qui manque avec la commande :",
-        footer: "Remember When © 2026 - Votre mémoire, sous votre contrôle."
+        step2: "Configurez la Skill dans OpenClaw :",
+        step2_text: "Permettez à votre agent d'IA d'utiliser cette compétence en l'installant via la ligne de commande OpenClaw :",
+        step3: "Laissez votre Agent faire le reste :",
+        step3_text: "Votre agent commencera automatiquement à archiver les souvenirs. Utilisez la commande inventory pour auditer l'état de votre mémoire locale :",
+        footer: "Remember When © 2026 - Propulsé par des Agents d'IA, contrôlé par vous."
       },
       zh: {
-        back_to_2mes4: "返回 2mes4.com",
-        github_repo: "GitHub 仓库",
-        badge: "OpenClaw + CLI",
+        badge: "Agentic Skill",
         title: "Remember When",
-        hero_subtitle: "一个直接在本地磁盘上捕获和组织数字记忆的智能系统。",
+        hero_subtitle: "创建一个群组并开始分享；您的代理将记录发生的事情。在工作、旅行或朋友圈中使用它... 简单、快速且免费。",
         card1_title: "什么是 Remember When？",
         card1_text: "它是一个由 OpenClaw 代理和 Node.js CLI 组成的混合解决方案。该代理在 WhatsApp 或 Telegram 群组中担任您的个人档案管理员，检测难忘时刻并将其自动保存到您的计算机中。",
         card2_title: "多媒体管理",
@@ -212,11 +204,100 @@ npm install -g .</pre>
         installation: "安装",
         step1: "全局安装存储引擎 (CLI)：",
         step2: "在 OpenClaw 中配置您的技能：",
-        step2_text: "您可以使用以下命令通过 skills.sh 自动将此技能添加到您的代理：",
-        step2_note: "（如有必要，请替换为您存储库的最终 URL）。",
+        step2_text: "您可以使用 OpenClaw CLI 自动将此技能添加到您的代理：",
         step3: "见证奇迹的发生：",
         step3_text: "代理将开始保存条目。您可以使用以下命令检查缺少的库存：",
-        footer: "Remember When © 2026 - 您的记忆，由您控制。"
+        footer: "Remember When © 2026 - 由 AI 代理驱动，由您控制。"
+      },
+      ja: {
+        badge: "エージェンティックスキル",
+        title: "Remember When",
+        hero_subtitle: "グループを作成して共有を開始しましょう。あなたのエージェントが何が起こったかを記録します。仕事、旅行、または友人のグループで使用してください... 簡単で、速く、無料です。",
+        card1_title: "このAIスキルは何ですか？",
+        card1_text: "これは、AIエージェント（OpenClaw）向けに設計されたプロフェッショナルなツールキットです。エージェントがWhatsAppやTelegramグループ内でプロアクティブなデジタルアーキビストとして機能し、価値のある瞬間を特定して、専用のCLIを使用してローカルストレージに保存できるようにします。",
+        card2_title: "自律的なメディア処理",
+        card2_text: "エージェントは写真、ビデオ、ボイスメモを検出し、日付ごとに整理されたフォルダー（YYYY-MM-DD）にコピーし、データがマシン上でプライベートに保たれるようにします。",
+        card3_title: "認知的な要約",
+        card3_text: "AIエージェントは充実した記録と毎日の要約を生成し、単なるキーワードではなく、意味を通じて複雑な会話を思い出すことができます。",
+        installation: "インストール",
+        step1: "ストレージエンジン（CLI）をグローバルにインストールします：",
+        step2: "OpenClawでスキルを構成します：",
+        step2_text: "OpenClawコマンドラインを介してインストールすることにより、AIエージェントがこのスキルを使用できるようにします：",
+        step3: "残りはエージェントに任せましょう：",
+        step3_text: "エージェントは自動的に思い出のアーカイブを開始します。inventoryコマンドを使用して、ローカルメモリの状態を監査します：",
+        footer: "Remember When © 2026 - AIエージェントを搭載し、あなたがコントロールします。"
+      },
+      ar: {
+        badge: "مهارة وكيل",
+        title: "Remember When",
+        hero_subtitle: "أنشئ مجموعة وابدأ المشاركة؛ سيقوم وكيلك بإنشاء سجل لما يحدث. استخدمه في العمل، أو السفر، أو مجموعات الأصدقاء... إنه سهل وسريع ومجاني.",
+        card1_title: "ما هي مهارة الذكاء الاصطناعي هذه؟",
+        card1_text: "إنها مجموعة أدوات احترافية مصممة لوكلاء الذكاء الاصطناعي (OpenClaw). وهي تمكن وكيلك من العمل كمؤرشف رقمي استباقي داخل مجموعات WhatsApp أو Telegram، وتحديد اللحظات القيمة وحفظها في التخزين المحلي باستخدام واجهة سطر الأوامر المخصصة لدينا.",
+        card2_title: "التعامل الذاتي مع الوسائط",
+        card2_text: "يكتشف الوكيل الصور ومقاطع الفيديو والملاحظات الصوتية، ويقوم بنسخها إلى مجلدات منظمة حسب التاريخ (YYYY-MM-DD)، ويضمن بقاء بياناتك خاصة على جهازك.",
+        card3_title: "ملخصات معرفية",
+        card3_text: "يقوم وكيل الذكاء الاصطناعي الخاص بك بإنشاء سجلات غنية وملخصات يومية، مما يسمح لك باسترجاع المحادثات المعقدة من خلال المعنى الدلالي بدلاً من مجرد الكلمات الرئيسية.",
+        installation: "التثبيت",
+        step1: "تثبيت محرك التخزين (CLI) عالميًا:",
+        step2: "تكوين المهارة في OpenClaw:",
+        step2_text: "تمكين وكيل الذكاء الاصطناعي الخاص بك من استخدام هذه المهارة عن طريق تثبيتها عبر سطر أوامر OpenClaw:",
+        step3: "اترك الباقي لوكيلك:",
+        step3_text: "سيبدأ وكيلك تلقائيًا في أرشفة الذكريات. استخدم أمر inventory لمراجعة حالة ذاكرتك المحلية:",
+        footer: "Remember When © 2026 - مدعوم بوكلاء الذكاء الاصطناعي، وتحت تحكمك."
+      },
+      hi: {
+        badge: "एजेंटिक स्किल",
+        title: "Remember When",
+        hero_subtitle: "एक समूह बनाएं और साझा करना शुरू करें; आपका एजेंट होने वाली घटनाओं का लॉग बनाएगा। काम, यात्रा, या दोस्तों के समूहों के लिए इसका उपयोग करें... यह आसान, तेज़ और मुफ़्त है।",
+        card1_title: "यह AI स्किल क्या है?",
+        card1_text: "यह AI एजेंटों (OpenClaw) के लिए डिज़ाइन किया गया एक पेशेवर टूलकिट है। यह आपके एजेंट को WhatsApp या Telegram समूहों के भीतर एक सक्रिय डिजिटल आर्काइविस्ट के रूप में कार्य करने में सक्षम बनाता है, मूल्यवान क्षणों की पहचान करता है और हमारे समर्पित CLI का उपयोग करके उन्हें स्थानीय भंडारण में सहेजता है।",
+        card2_title: "स्वायत्त मीडिया हैंडलिंग",
+        card2_text: "एजेंट फ़ोटो, वीडियो और वॉयस नोट्स का पता लगाता है, उन्हें दिनांक-व्यवस्थित फ़ोल्डरों (YYYY-MM-DD) में कॉपी करता है, और यह सुनिश्चित करता है कि आपका डेटा आपकी मशीन पर निजी रहे।",
+        card3_title: "संज्ञानात्मक सारांश",
+        card3_text: "आपका AI एजेंट समृद्ध इतिहास और दैनिक सारांश उत्पन्न करता है, जिससे आप केवल कीवर्ड के बजाय शब्दार्थ अर्थ के माध्यम से जटिल बातचीत को याद कर सकते हैं।",
+        installation: "स्थापना",
+        step1: "स्टोरेज इंजन (CLI) को विश्व स्तर पर स्थापित करें:",
+        step2: "OpenClaw में स्किल को कॉन्फ़िगर करें:",
+        step2_text: "अपने AI एजेंट को OpenClaw कमांड लाइन के माध्यम से स्थापित करके इस कौशल का उपयोग करने में सक्षम करें:",
+        step3: "बाकी काम अपने एजेंट पर छोड़ दें:",
+        step3_text: "आपका एजेंट स्वचालित रूप से यादों को संग्रहीत करना शुरू कर देगा। अपने स्थानीय मेमोरी स्थिति का ऑडिट करने के लिए inventory कमांड का उपयोग करें:",
+        footer: "Remember When © 2026 - AI एजेंटों द्वारा संचालित, आपके द्वारा नियंत्रित।"
+      },
+      ml: {
+        badge: "ഏജന്റിക് സ്കിൽ",
+        title: "Remember When",
+        hero_subtitle: "ഒരു ഗ്രൂപ്പ് സൃഷ്ടിച്ച് പങ്കിടാൻ തുടങ്ങുക; സംഭവിക്കുന്ന കാര്യങ്ങളുടെ ഒരു ലോഗ് നിങ്ങളുടെ ഏജന്റ് സൃഷ്ടിക്കും. ജോലിസ്ഥലത്തോ യാത്രകളിലോ സുഹൃത്തുക്കളുടെ ഗ്രൂപ്പുകളിലോ ഇത് ഉപയോഗിക്കുക... ഇത് എളുപ്പവും വേഗതയേറിയതും സൗജന്യവുമാണ്.",
+        card1_title: "എന്താണ് ഈ AI സ്കിൽ?",
+        card1_text: "AI ഏജന്റുകൾക്കായി (OpenClaw) രൂപകൽപ്പന ചെയ്‌തിരിക്കുന്ന ഒരു പ്രൊഫഷണൽ ടൂൾകിറ്റാണിത്. വാട്ട്‌സ്ആപ്പ് അല്ലെങ്കിൽ ടെലിഗ്രാം ഗ്രൂപ്പുകൾക്കുള്ളിൽ ഒരു സജീവ ഡിജിറ്റൽ ആർക്കൈവിസ്റ്റായി പ്രവർത്തിക്കാൻ ഇത് നിങ്ങളുടെ ഏജന്റിനെ പ്രാപ്‌തമാക്കുന്നു, വിലയേറിയ നിമിഷങ്ങൾ തിരിച്ചറിയുകയും ഞങ്ങളുടെ സമർപ്പിത CLI ഉപയോഗിച്ച് പ്രാദേശിക സംഭരണത്തിലേക്ക് അവ സംരക്ഷിക്കുകയും ചെയ്യുന്നു.",
+        card2_title: "സ്വയംഭരണാധികാരമുള്ള മീഡിയ കൈകാര്യം ചെയ്യൽ",
+        card2_text: "ഏജന്റ് ഫോട്ടോകൾ, വീഡിയോകൾ, വോയ്‌സ് നോട്ടുകൾ എന്നിവ കണ്ടെത്തുന്നു, തീയതി പ്രകാരം ക്രമീകരിച്ച ഫോൾഡറുകളിലേക്ക് (YYYY-MM-DD) പകർത്തുന്നു, കൂടാതെ നിങ്ങളുടെ ഡാറ്റ നിങ്ങളുടെ മെഷീനിൽ സുരക്ഷിതമായി തുടരുന്നുവെന്ന് ഉറപ്പാക്കുന്നു.",
+        card3_title: "കോഗ്നിറ്റീവ് സംഗ്രഹങ്ങൾ",
+        card3_text: "നിങ്ങളുടെ AI ഏജന്റ് സമ്പന്നമായ ചരിത്രങ്ങളും ദൈനംദിന സംഗ്രഹങ്ങളും സൃഷ്ടിക്കുന്നു, കീവേഡുകൾക്ക് പകരം അർത്ഥത്തിലൂടെ സങ്കീർണ്ണമായ സംഭാഷണങ്ങൾ ഓർത്തെടുക്കാൻ നിങ്ങളെ അനുവദിക്കുന്നു.",
+        installation: "ഇൻസ്റ്റലേഷൻ",
+        step1: "സ്റ്റോറേജ് എഞ്ചിൻ (CLI) ആഗോളതലത്തിൽ ഇൻസ്റ്റാൾ ചെയ്യുക:",
+        step2: "OpenClaw-ൽ സ്കിൽ കോൺഫിഗർ ചെയ്യുക:",
+        step2_text: "OpenClaw കമാൻഡ് ലൈൻ വഴി ഇൻസ്റ്റാൾ ചെയ്യുന്നതിലൂടെ ഈ സ്കിൽ ഉപയോഗിക്കാൻ നിങ്ങളുടെ AI ഏജന്റിനെ പ്രാപ്തമാക്കുക:",
+        step3: "ബാക്കി നിങ്ങളുടെ ഏജന്റിന് വിട്ടുകൊടുക്കുക:",
+        step3_text: "നിങ്ങളുടെ ഏജന്റ് സ്വയമേവ ഓർമ്മകൾ ആർക്കൈവ് ചെയ്യാൻ തുടങ്ങും. നിങ്ങളുടെ പ്രാദേശിക മെമ്മറി നില പരിശോധിക്കാൻ inventory കമാൻഡ് ഉപയോഗിക്കുക:",
+        footer: "Remember When © 2026 - AI ഏജന്റുകളാൽ പ്രവർത്തിക്കുന്നു, നിങ്ങളുടെ നിയന്ത്രണത്തിൽ."
+      },
+      ru: {
+        badge: "Агентский навык",
+        title: "Remember When",
+        hero_subtitle: "Создайте группу и начните делиться информацией; ваш агент составит журнал происходящего. Используйте его на работе, в путешествиях или в группах друзей... Это легко, быстро и бесплатно.",
+        card1_title: "Что это за навык ИИ?",
+        card1_text: "Это профессиональный набор инструментов, разработанный для агентов ИИ (OpenClaw). Он позволяет вашему агенту выступать в качестве активного цифрового архивариуса в группах WhatsApp или Telegram, выявляя ценные моменты и сохраняя их в локальном хранилище с помощью нашего специального CLI.",
+        card2_title: "Автономная обработка медиа",
+        card2_text: "Агент обнаруживает фотографии, видео и голосовые заметки, копирует их в папки, организованные по датам (ГГГГ-ММ-ДД), и гарантирует, что ваши данные остаются конфиденциальными на вашем компьютере.",
+        card3_title: "Когнитивные резюме",
+        card3_text: "Ваш ИИ-агент создает подробные хроники и ежедневные сводки, позволяя вам вспоминать сложные разговоры по их смыслу, а не только по ключевым словам.",
+        installation: "Установка",
+        step1: "Установите движок хранилища (CLI) глобально:",
+        step2: "Настройте навык в OpenClaw:",
+        step2_text: "Разрешите вашему ИИ-агенту использовать этот навык, установив его через командную строку OpenClaw:",
+        step3: "Пусть ваш агент позаботится об остальном:",
+        step3_text: "Ваш агент автоматически начнет архивировать воспоминания. Используйте команду inventory для аудита состояния вашей локальной памяти:",
+        footer: "Remember When © 2026 — Работает на агентах ИИ, под вашим контролем."
       }
     };
 
