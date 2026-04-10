@@ -1,45 +1,66 @@
-# Remember When - CLI
+# Remember When - Storage CLI
 
-Este CLI es el motor de almacenamiento local para el sistema de memoria digital "Remember When". Permite registrar entradas en un historial cronológico (`timeline.json`) y organizar archivos multimedia en carpetas diarias.
+The persistence engine for the **Remember When** digital memory system. This Node.js application handles local file organization, automatic folder structure, and the master timeline ledger.
 
-## Instalación
+## 📦 Installation
 
-Para usar el comando `remember-when` globalmente en tu sistema, ejecuta desde esta carpeta:
+Install globally to enable the `remember-when` command system-wide:
 
 ```bash
+cd remember-when-cli
 npm install -g .
 ```
 
-## Comandos
+## 🛠 Command Reference
 
-### 1. `add`
-Registra un evento (foto, texto, etc.).
+### `add`
+Registers a new event and optionally moves a file to the permanent local archive.
 ```bash
-remember-when add -g "Familia" -t "photo" -s "Mama" -r "Foto del jardín"
+remember-when add -g "Friends" -t "photo" -s "Juan" -r "Beach day" -f "/tmp/img.jpg"
 ```
 
-### 2. `set-group-info`
-Define el contexto del grupo.
+### `set-group-info`
+Defines the purpose and participants of a group.
 ```bash
-remember-when set-group-info -g "Familia" -d "Grupo para organizar cenas y noticias familiares" -p "Mama, Papa, Juan, Ana"
+remember-when set-group-info -g "Friends" -d "Local hangout crew" -p "Juan, Eric, Maria"
 ```
 
-### 3. `set-daily-summary`
-Establece un resumen breve de lo ocurrido en un día.
+### `set-daily-summary`
+Adds a high-level summary of what happened during a specific day.
 ```bash
-remember-when set-daily-summary -g "Familia" -d "2026-04-10" -s "Hoy decidimos que la cena de Navidad será en casa de Ana."
+remember-when set-daily-summary -g "Friends" -d "2026-04-10" -s "We planned the summer trip."
 ```
 
-### 4. `inventory`
-Muestra qué información falta por rellenar (descripciones o resúmenes diarios).
+### `inventory`
+Audits the storage and highlights missing metadata or gaps in chronicles.
 ```bash
 remember-when inventory
 ```
 
-## Almacenamiento
-Toda la información se guarda en tu directorio personal en:
-`~/.remember-when/`
+## 📂 Storage Architecture
 
-Estructura:
-- `timeline.json`: Índice maestro de todos los recuerdos.
-- `YYYY-MM-DD/`: Carpetas diarias con los archivos originales.
+All data is stored in your home directory: `~/.remember-when/`
+
+### 1. `timeline.json`
+The master index of all your memories.
+```json
+{
+  "groups": {
+    "Friends": {
+      "info": { "description": "...", "participants": [] },
+      "daily_summaries": { "2026-04-10": "..." }
+    }
+  },
+  "entries": [
+    { "id": "...", "type": "...", "summary": "...", "file": "2026-04-10/123-img.jpg" }
+  ]
+}
+```
+
+### 2. Daily Folders
+Media files are copied to `~/.remember-when/YYYY-MM-DD/` with unique timestamps to prevent name collisions.
+
+## 🧪 Testing
+```bash
+npm test
+```
