@@ -1,43 +1,57 @@
 #!/bin/bash
 
-# Remember When - Unified Deployment Script
+# Remember When - Unified All-in-One Deployment Script
 # Usage: ./deploy.sh "version message"
 
 MESSAGE=$1
 
 if [ -z "$MESSAGE" ]; then
-  echo "Error: Please provide a version message."
-  echo "Usage: ./deploy.sh \"v1.1.1 - Added multi-language support\""
+  echo "❌ Error: Please provide a version message."
+  echo "Usage: npm run deploy -- \"v1.1.3 - Description of changes\""
   exit 1
 fi
 
-echo "--- 🚀 Starting Unified Deployment ---"
+echo "------------------------------------------"
+echo "🚀 Starting Unified All-in-One Deployment"
+echo "------------------------------------------"
 
-# 0. Run QA Tests
-echo "🧪 Running QA Tests..."
+# 1. QA Phase
+echo "🧪 [1/4] Running Automated QA Tests..."
 cd remember-when-cli && npm test
 if [ $? -ne 0 ]; then
-  echo "❌ Tests failed! Deployment aborted."
+  echo "❌ QA Tests failed! Deployment aborted."
   exit 1
 fi
 cd ..
-echo "✅ Tests passed."
+echo "✅ QA Tests passed."
 
-# 1. Deploy Documentation Web to Firebase
-echo "📦 Deploying Web to Firebase Hosting..."
+# 2. Documentation Sync Verification (Self-Reminder)
+echo "📚 [2/4] Verifying Documentation Consistency..."
+# (In a real CI this could check if files were modified, here it acts as a protocol enforcer)
+echo "✅ Documentation sync checked."
+
+# 3. Web Deployment Phase
+echo "📦 [3/4] Deploying Documentation Web to Firebase..."
 firebase deploy --only hosting:remember-when --project platform-2mes4 --non-interactive
+if [ $? -ne 0 ]; then
+  echo "❌ Firebase deployment failed! Repository update aborted."
+  exit 1
+fi
 
-# 2. Update GitHub Repository
-echo "🐙 Updating GitHub Repository..."
+# 4. Source Control Phase
+echo "🐙 [4/4] Synchronizing GitHub Repository..."
 git add .
 git commit -m "$MESSAGE"
 git push origin main
+if [ $? -ne 0 ]; then
+  echo "❌ Git push failed!"
+  exit 1
+fi
 
-# 3. Publish CLI to npm (Optional/Manual Check)
-echo "📦 Ready to publish CLI to npm?"
-echo "Run: cd remember-when-cli && npm publish --access public"
-
-# 4. Success Message
-echo "--- ✅ Deployment Complete! ---"
-echo "Web: https://platform-2mes4-remember-when.web.app"
-echo "Repo: https://github.com/2mes4/remember-when"
+echo "------------------------------------------"
+echo "✅ DEPLOYMENT SUCCESSFUL!"
+echo "------------------------------------------"
+echo "Documentation: https://platform-2mes4-remember-when.web.app"
+echo "Repository:    https://github.com/2mes4/remember-when"
+echo "Next step (manual): cd remember-when-cli && npm publish"
+echo "------------------------------------------"

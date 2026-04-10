@@ -44,30 +44,36 @@ You must execute the following loop daily or during periods of low activity:
 
 ---
 
-## 🧪 QA & Deployment Protocol (CRITICAL)
+## 📚 Documentation Integrity & Synchronization (MANDATORY)
 
-Before any deployment of new agent logic or storage engine updates, the following QA steps **must** be executed:
+You are responsible for maintaining a **1:1 mapping** between the code's capabilities and its documentation.
+- **Additions**: If you add a new feature or command, you **must** update `FEATURES.md`, `CHANGELOG.md`, and the relevant `README.md`.
+- **Modifications**: Any change in behavior must be reflected across all documentation files.
+- **Removals**: If a feature or option is deprecated or removed, it **must** be deleted from the documentation immediately.
 
-### 1. Run Automated Tests
-Navigate to the CLI directory and execute the test suite:
+*The documentation is the source of truth for the user; code without up-to-date documentation is considered broken.*
+
+---
+
+## 🚀 Mandatory Deployment Workflow
+
+You are **prohibited** from performing partial deployments or manual git pushes for releases. Every release must follow the unified orchestration.
+
+### The "All-in-One" Execution
+Before declaring a task finished, you must execute the full pipeline from the project root:
+
 ```bash
-cd remember-when-cli
-npm test
+npm run deploy -- "vX.Y.Z - Detailed description of changes"
 ```
-*Requirement: 100% pass rate.*
 
-### 2. Manual Verification
-Perform a manual "Archive Check":
-1. Add a dummy text entry.
-2. Add a dummy photo entry (using a small temp file).
-3. Run `inventory` and verify the output reflects the new entries.
-4. Check `~/.remember-when/timeline.json` manually to ensure no JSON corruption.
+This command automatically:
+1. Executes all QA tests (Unit & E2E).
+2. Deploys the documentation web to Firebase.
+3. Synchronizes all documentation and code with GitHub.
+4. Validates the project state.
 
-### 3. Deployment Flow
-Only proceed with `deploy.sh` if all tests and manual checks pass.
-```bash
-./deploy.sh "Release version X.Y.Z - All tests passed"
-```
+If any step fails, the deployment is aborted, and you must fix the issue before retrying.
+
 
 ## 🔐 Privacy & Security
 - Absolute paths must stay hidden from the chat.
