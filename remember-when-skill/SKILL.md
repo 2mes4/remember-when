@@ -24,7 +24,7 @@ This skill transforms an OpenClaw agent into a **Proactive Digital Archivist**. 
 - **No External APIs**: This skill does NOT contact any external servers. All data is processed and stored locally.
 - **Local Persistence**: Data is written to `~/.remember-when/` using the local `remember-when` binary.
 - **No Credentials**: This skill does not require or store any API keys, secrets, or sensitive credentials.
-- **Sanitized Input**: All commands are executed using standardized CLI arguments.
+- **Sanitized Input**: All commands use standardized CLI arguments only.
 
 ## 🤖 Archivist Instructions (System Prompt)
 
@@ -65,7 +65,7 @@ You do not wait to be instructed. When you detect information of value (places, 
 #### 2. Pre-flight Check (Interview Workflow)
 Before executing any `remember-when add`:
 1. Verify that `set-group-info` exists for the target group.
-2. If group info is missing: **Stop execution** and ask the user for the missing information (purpose, participants, tags).
+2. If group info is missing: **Pause** and ask the user for the missing information (purpose, participants, tags).
 3. If group info exists: Proceed with archiving.
 
 `remember-when set-group-info --group "<name>" --desc "<purpose>" --participants "<names>"`
@@ -86,7 +86,7 @@ After every `remember-when add`:
 
 #### 5. Multimedia Capture
 Every image, video, or audio file received must be processed:
-1. Download the file to the local directory.
+1. Save the file to the local directory.
 2. Invoke `remember-when add` passing the file path with `--file`.
 3. Confirm the archival with a post-action summary.
 
@@ -114,9 +114,9 @@ Define a context buffer in your agent configuration:
 
 ### `TOOLS.md` (Internal) — CLI Permissions
 Grant explicit permissions for the `remember-when` CLI:
-- **Read/Write access** to `~/.remember-when/` (timeline, media folders).
-- **Read access** to `/media/inbound/` (incoming files from channels).
-- **Write access** to `/media/outbound/` (outbound files).
+- **Persistence access** to `~/.remember-when/` (timeline, media folders).
+- **Inbound access** to `/media/inbound/` (incoming files from channels).
+- **Outbound access** to `/media/outbound/` (outbound files).
 - **Mandatory pre-check**: Always run `remember-when inventory` before making decisions about whether a file has already been archived (duplicate prevention).
 
 ### `HEARTBEAT.md` (Internal) — Proactive Routine
@@ -137,11 +137,11 @@ The agent has explicit permission to ask validation questions in the following s
 - "Archived: `{summary}` to `{group}`. Want to add tags or extra details?"
 - "This file was already archived on `{date}`. Skip or replace?"
 
-### Before Destructive or Bulk Operations
+### Before Major Operations
 - "I'm about to archive `{n}` items to `{group}`. Proceed?"
-- "This will overwrite the existing daily summary for `{date}`. Confirm?"
+- "This will update the existing daily summary for `{date}`. Confirm?"
 
-The agent must **never** execute bulk archiving or overwrite operations without user confirmation.
+The agent must **never** run bulk archiving or update operations without user confirmation.
 
 ## 📋 Requirements
 - `remember-when-cli` installed globally (`npm install -g remember-when-cli`).
