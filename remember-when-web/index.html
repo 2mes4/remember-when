@@ -99,17 +99,12 @@
             <p style="margin-top: 1rem; color: var(--text-muted);" data-i18n="step2_text">Choose your preferred installation method:</p>
             
             <div class="tabs">
-              <button class="tab-btn active" onclick="showTab('openclaw')">OpenClaw</button>
-              <button class="tab-btn" onclick="showTab('clawhub')">Clawhub</button>
+              <button class="tab-btn active" onclick="showTab('clawhub')">Clawhub</button>
               <button class="tab-btn" onclick="showTab('skills')">skills.sh</button>
+              <button class="tab-btn" onclick="showTab('openclaw')">OpenClaw</button>
             </div>
 
-            <div id="openclaw" class="tab-content active">
-              <p style="margin-bottom: 1rem; color: var(--text-muted);" data-i18n="step2_openclaw">Install via the standard OpenClaw command:</p>
-              <pre>openclaw skills install remember-when-skill</pre>
-            </div>
-
-            <div id="clawhub" class="tab-content">
+            <div id="clawhub" class="tab-content active">
               <p style="margin-bottom: 1rem; color: var(--text-muted);" data-i18n="step2_clawhub">Install directly using the Clawhub CLI:</p>
               <pre>npx clawhub install remember-when-skill</pre>
             </div>
@@ -117,6 +112,11 @@
             <div id="skills" class="tab-content">
               <p style="margin-bottom: 1rem; color: var(--text-muted);" data-i18n="step2_skills">Alternatively, use the automated installer script:</p>
               <pre>npx skills add https://github.com/2mes4/remember-when --skill remember-when-skill</pre>
+            </div>
+
+            <div id="openclaw" class="tab-content">
+              <p style="margin-bottom: 1rem; color: var(--text-muted);" data-i18n="step2_openclaw">Install via the standard OpenClaw command:</p>
+              <pre>openclaw skills install remember-when-skill</pre>
             </div>
           </div>
           <div class="step-item">
@@ -308,14 +308,14 @@
         title: "Remember When",
         hero_subtitle: "एक समूह बनाएं और साझा करना शुरू करें; आपका एजेंट होने वाली घटनाओं का लॉग बनाएगा। काम, यात्रा, या दोस्तों के समूहों के लिए इसका उपयोग करें... यह आसान, तेज़ और मुफ़्त है।",
         card1_title: "यह AI स्किल क्या है?",
-        card1_text: "यह AI एजेंटों (OpenClaw) के लिए डिज़ाइन किया गया एक पेशेवर टूलकिट है। यह आपके एजेंट को WhatsApp या Telegram समूहों के भीतर एक सक्रिय डिजिटल आर्काइविस्ट के रूप में कार्य करने में सक्षम बनाता है, मूल्यवान क्षणों की पहचान करता है और हमारे समर्पित CLI का उपयोग करके उन्हें स्थानीय भंडारण में सहेजता है।",
+        card1_text: "यह AI एजेंटों (OpenClaw) के लिए डिज़ाइन किया गया एक profesional टूलकिट है। यह आपके एजेंट को WhatsApp या Telegram समूहों के भीतर एक सक्रिय डिजिटल आर्काइविस्ट के रूप में कार्य करने में सक्षम बनाता है, मूल्यवान क्षणों की पहचान करता है और हमारे समर्पित CLI का उपयोग करके उन्हें स्थानीय भंडारण में सहेजता है।",
         card2_title: "स्वायत्त मीडिया हैंडलिंग",
-        card2_text: "एजेंट फ़ोटो, वीडियो और वॉयस नोट्स का पता लगाता है, उन्हें दिनांक-व्यवस्थित फ़ोल्डरों (YYYY-MM-DD) में कॉपी करता है, और यह सुनिश्चित करता है कि आपका डेटा आपकी मशीन पर निजी रहे।",
+        card2_text: "एजेंट फ़ोटो, वीडियो और वॉयस नोट्स का पता लगाता है, उन्हें दिनांक-व्यवस्थित फ़ोल्डरों (YYYY-MM-DD) में कॉपी करता, और यह सुनिश्चित करता है कि आपका डेटा आपकी मशीन पर निजी रहे।",
         card3_title: "संज्ञानात्मक सारांश",
         card3_text: "आपका AI एजेंट समृद्ध इतिहास और दैनिक सारांश उत्पन्न करता है, जिससे आप केवल कीवर्ड के बजाय शब्दार्थ अर्थ के माध्यम से जटिल बातचीत को याद कर सकते हैं।",
         installation: "स्थापना",
         step1: "स्टोरेज इंजन (CLI) को विश्व स्तर पर स्थापित करें:",
-        step2: "अपने वातावरण में स्किल को कॉन्फ़िगर करें:",
+        step2: "अपने वातावरण में स्किल को कॉन्फ़िgar करें:",
         step2_text: "अपनी पसंदीदा स्थापना विधि चुनें:",
         step2_openclaw: "मानक OpenClaw कमांड के माध्यम से स्थापित करें:",
         step2_clawhub: "Clawhub CLI का उपयोग करके सीधे स्थापित करें:",
@@ -331,18 +331,18 @@
         card1_title: "എന്താണ് ഈ AI സ്കിൽ?",
         card1_text: "AI ഏജന്റുകൾക്കായി (OpenClaw) രൂപകൽപ്പന ചെയ്‌തിരിക്കുന്ന ഒരു പ്രൊഫഷണൽ ടൂൾകിറ്റാണിത്. വാട്ട്‌സ്ആപ്പ് അല്ലെങ്കിൽ ടെലിഗ്രാം ഗ്രൂപ്പുകൾക്കുള്ളിൽ ഒരു സജീവ ഡിജിറ്റൽ ആർക്കൈവിസ്റ്റായി പ്രവർത്തിക്കാൻ ഇത് നിങ്ങളുടെ ഏജന്റിനെ പ്രാപ്‌തമാക്കുന്നു, വിലയേറിയ നിമിഷങ്ങൾ തിരിച്ചറിയുകയും ഞങ്ങളുടെ സമർപ്പിത CLI ഉപയോഗിച്ച് പ്രാദേശിക സംഭരണത്തിലേക്ക് അവ സംരക്ഷിക്കുകയും ചെയ്യുന്നു.",
         card2_title: "സ്വയംഭരണാധികാരമുള്ള മീഡിയ കൈകാര്യം ചെയ്യൽ",
-        card2_text: "ഏജന്റ് ഫോട്ടോകൾ, വീഡിയോകൾ, വോയ്‌സ് നോട്ടുകൾ എന്നിവ കണ്ടെത്തുന്നു, തീയতি പ്രകാരം ക്രമീകരിച്ച ഫോൾഡറുകളിലേക്ക് (YYYY-MM-DD) പകർത്തുന്നു, കൂടാതെ നിങ്ങളുടെ ഡിജിറ്റൽ വിവരങ്ങൾ നിങ്ങളുടെ മെഷീനിൽ സുരക്ഷിതമായി തുടരുന്നുവെന്ന് ഉറപ്പാക്കുന്നു.",
+        card2_text: "ഏജന്റ് ഫോട്ടോകൾ, വീഡിയോകൾ, വോയ്‌സ് നോട്ടുകൾ എന്നിവ കണ്ടെത്തുന്നു, തീയതി പ്രകാരം ക്രമീകരിച്ച ഫോൾഡറുകളിലേക്ക് (YYYY-MM-DD) പകർത്തുന്നു, കൂടാതെ നിങ്ങളുടെ ഡിജിറ്റൽ വിവരങ്ങൾ നിങ്ങളുടെ മെഷീനിൽ സുരക്ഷിതമായി തുടരുന്നുവെന്ന് ഉറപ്പാക്കുന്നു.",
         card3_title: "കോഗ്നിറ്റീവ് സംഗ്രഹങ്ങൾ",
         card3_text: "നിങ്ങളുടെ AI ഏജന്റ് സമ്പന്നമായ ചരിത്രങ്ങളും ദൈനംദിന സംഗ്രഹങ്ങളും സൃഷ്ടിക്കുന്നു, കീവേഡുകൾക്ക് പകരം അർത്ഥത്തിലൂടെ സങ്കീർണ്ണമായ സംഭാഷണങ്ങൾ ഓർത്തെടുക്കാൻ നിങ്ങളെ അനുവദിക്കുന്നു.",
         installation: "ഇൻസ്റ്റലേഷൻ",
-        step1: "സ്റ്റോറേജ് എഞ്ചിൻ (CLI) ആഗോളതലത്തിൽ ഇൻസ്റ്റാൾ ചെയ്യുക:",
+        step1: "സ്റ്റോറേജ് എഞ്ചിൻ (CLI) ആഗോളതലದಲ್ಲಿ ഇൻസ്റ്റാൾ ചെയ്യുക:",
         step2: "നിങ്ങളുടെ പരിതസ്ഥിതിയിൽ സ്കിൽ കോൺഫിഗർ ചെയ്യുക:",
         step2_text: "നിങ്ങൾ ഇഷ്ടപ്പെടുന്ന ഇൻസ്റ്റാളേഷൻ രീതി തിരഞ്ഞെടുക്കുക:",
         step2_openclaw: "സ്റ്റാൻഡേർഡ് OpenClaw കമാൻഡ് വഴി ഇൻസ്റ്റാൾ ചെയ്യുക:",
         step2_clawhub: "Clawhub CLI ഉപയോഗിച്ച് നേരിട്ട് ഇൻസ്റ്റാൾ ചെയ്യുക:",
         step2_skills: "പകരമായി, ഓട്ടോമേറ്റഡ് ഇൻസ്റ്റാളർ സ്ക്രിപ്റ്റ് ഉപയോഗിക്കുക:",
         step3: "ബാക്കി നിങ്ങളുടെ ഏജന്റിന് വിട്ടുകൊടുക്കുക:",
-        step3_text: "നിങ്ങളുടെ ഏgetൻറ് സ്വയമേവ ഓർമ്മകൾ ആർക്കൈവ് ചെയ്യാൻ തുടങ്ങും. നിങ്ങളുടെ പ്രാദേശിക മെമ്മറി നില പരിശോധിക്കാൻ inventory കമാൻഡ് ഉപയോഗിക്കുക:",
+        step3_text: "നിങ്ങളുടെ ഏജന്റ് സ്വയമേവ ഓർമ്മകൾ ആർക്കൈവ് ചെയ്യാൻ തുടങ്ങും. നിങ്ങളുടെ പ്രാദേശിക മെമ്മറി നില പരിശോധിക്കാൻ inventory കമാൻഡ് ഉപയോഗിക്കുക:",
         footer: "Remember When © 2026 - AI ഏജന്റുകളാൽ പ്രവർത്തിക്കുന്നു, നിങ്ങളുടെ നിയന്ത്രണത്തിൽ."
       },
       ru: {

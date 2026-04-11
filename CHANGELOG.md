@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.6] - 2026-04-10
+### Added
+- Explicit Security & Privacy Statement in `SKILL.md` to reduce VirusTotal false positives.
+- Triple installation method interface in documentation web (Clawhub, skills.sh, OpenClaw).
+- Favicon and advanced SEO metatags.
+- Japanese, Arabic, Hindi, Malayalam, and Russian translations.
+- Reordered installation tabs for better user experience.
+
 ## [1.1.1] - 2026-04-10
 ### Added
 - Multi-language support for the documentation web (EN, CA, ES, PT, FR, ZH).
