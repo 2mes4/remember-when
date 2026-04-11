@@ -1,5 +1,16 @@
 # Changelog - Remember When Skill
 
+## [1.2.0] - 2026-04-11
+### Added
+- Proactive Archiving mode: agent detects and offers archival of valuable content autonomously.
+- Archiving Context Buffer: uses last active group as default context.
+- Pre-flight Check (Interview Workflow): verifies group context before archiving.
+- Post-action Validation: presents summary and asks for optional metadata after every `add`.
+- `interest_point` entry type for places, locations, and geographic points of interest.
+- Validation Questions API: explicit permission for confirmation questions before bulk/destructive operations.
+- Agent Configuration Requirements section: instructions for internal `AGENTS.md`, `TOOLS.md`, and `HEARTBEAT.md`.
+- Multimedia Capture Workflow: explicit download → `add --file` → confirm pipeline.
+
 ## [1.1.4] - 2026-04-10
 ### Added
 - Standardized YAML metadata for Clawhub.
