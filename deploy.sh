@@ -7,7 +7,7 @@ MESSAGE=$1
 
 if [ -z "$MESSAGE" ]; then
   echo "❌ Error: Please provide a version message."
-  echo "Usage: npm run deploy -- \"v1.1.4 - Description of changes\""
+  echo "Usage: npm run deploy -- \"v1.1.7 - Description of changes\""
   exit 1
 fi
 
@@ -30,14 +30,14 @@ cd remember-when-cli
 
 # Check if logged in
 if ! npm whoami > /dev/null 2>&1; then
-  echo "🔑 Not logged into npm. Please login:"
-  npm login
+  echo "🔑 Not logged into npm. Please run 'npm login' first."
+  exit 1
 fi
 
-echo "🔢 Incrementing version (patch)..."
+echo "🔢 Incrementing CLI version (patch)..."
 npm version patch -m "chore: bump version to %s"
 
-echo "🚀 Publishing to npm..."
+echo "🚀 Publishing CLI to npm..."
 npm publish --access public
 cd ..
 echo "✅ CLI published to npm."
@@ -45,15 +45,22 @@ echo "✅ CLI published to npm."
 # 3. OpenClaw Skill Deployment Phase
 echo "🤖 [3/6] Deploying Skill to Clawhub..."
 cd remember-when-skill
-SKILL_VERSION=$(node -e "console.log(require('./package.json').version)")
+
+# Check version consistency or increment
+# For skills we usually match the monorepo or increment separately.
+# Here we increment monorepo version later, but let's ensure skill is updated.
+npm version patch --no-git-tag-version || echo "No package.json in skill or version failed, continuing..."
+
+SKILL_VERSION=$(node -e "try { console.log(require('./package.json').version) } catch(e) { console.log('1.0.0') }")
+echo "🚀 Publishing skill v$SKILL_VERSION to Clawhub..."
 npx clawhub publish . --version "$SKILL_VERSION"
 cd ..
 echo "✅ Skill deployed to Clawhub."
 
-# 4. Documentation Sync
-echo "📚 [4/6] Verifying Documentation Consistency..."
-# Integrity check already performed by agent protocol
-echo "✅ Documentation sync verified."
+# 4. Documentation Sync & Global Versioning
+echo "📚 [4/6] Synchronizing Monorepo Version..."
+npm version patch --no-git-tag-version
+echo "✅ Monorepo version bumped."
 
 # 5. Web Deployment Phase
 echo "🌐 [5/6] Deploying Documentation Web to Firebase..."
@@ -70,7 +77,7 @@ echo "✅ GitHub synchronized."
 echo "------------------------------------------"
 echo "✨ DEPLOYMENT SUCCESSFUL!"
 echo "------------------------------------------"
-echo "Web:        https://platform-2mes4-remember-when.web.app"
+echo "Web:        https://remember-when.agentic.2mes4.com"
 echo "Repo:       https://github.com/2mes4/remember-when"
 echo "CLI:        https://www.npmjs.com/package/remember-when-cli"
 echo "------------------------------------------"
