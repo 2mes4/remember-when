@@ -7,15 +7,37 @@ This document defines the operational standards for AI agents **developing** thi
 ## 📖 Project Architecture
 
 ### Information Architecture
-All data is stored locally in `~/.remember-when/`:
-- **`timeline.json`**: The central ledger containing groups info and all entries.
-- **Daily Folders (`YYYY-MM-DD/`)**: Physical storage for images, videos, and audio.
+All data is stored locally in `~/.remember-when/` (symlinked as `~/Memories`):
+
+```
+~/.remember-when/                          (symlink: ~/Memories)
+├── inventory.json                         (master index of all groups)
+├── <Group-Name>/                          (one folder per group)
+│   ├── collection-index.json              (index of collections/days + cross refs)
+│   ├── rules.json                         (group management rules)
+│   ├── <YYYY-MM-DD>/                      (one collection per day)
+│   │   ├── collection.json                (entries + daily summary)
+│   │   └── <files>                        (physical media files)
+│   └── cross/                             (cross collections)
+│       └── <slug>.json                    (references to entries across days)
+```
+
+Groups are **fully isolated** — data from one group never mixes with another.
 
 ### Core Commands (CLI)
+- `install`: Initialize storage and create `~/Memories` symlink.
 - `add`: Record a specific event (text, photo, interest_point, etc.).
-- `set-group-info`: Define the group's purpose and member list.
+- `set-group-info`: Create or update a group with description and participants.
 - `set-daily-summary`: Create a "daily chronicle" of what happened.
-- `inventory`: Audit the storage to find missing information.
+- `inventory`: Audit all groups, collections, and missing information.
+- `create-cross`: Create a cross collection within a group.
+- `add-to-cross`: Add an entry reference to a cross collection.
+- `list-cross`: List all cross collections in a group.
+- `show-cross`: Show resolved entries of a cross collection.
+- `set-rule`: Add a rule for automatic cross collection suggestions.
+- `list-rules`: List all rules for a group.
+- `set-daily-context`: Add contextual info (weather, news, historical events) to a day.
+- `enrich-entry`: Add enrichment data (history, location, type) to a specific entry.
 
 ### Valid Entry Types
 - `text`: Memorable phrases, announcements, reflections.

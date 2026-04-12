@@ -15,7 +15,7 @@ The system follows a decoupled architecture where intelligence and persistence a
 ```
 
 - **Intelligence Layer (`/remember-when-skill`)**: An OpenClaw Skill that instructs agents to act as archivists, synthesizing conversations and media.
-- **Persistence Layer (`/remember-when-cli`)**: A Node.js CLI that manages the physical storage, folder organization, and the master `timeline.json`.
+- **Persistence Layer (`/remember-when-cli`)**: A Node.js CLI that manages the physical storage, group-based folder organization, cross collections, and contextual enrichment.
 - **Documentation Layer (`/remember-when-web`)**: A multi-language documentation portal deployed at [https://remember-when.agentic.2mes4.com](https://remember-when.agentic.2mes4.com).
 
 ## 🚀 Getting Started
@@ -23,14 +23,14 @@ The system follows a decoupled architecture where intelligence and persistence a
 ### 1. Global Persistence (CLI)
 Install the storage engine on the machine where your agent or local environment runs:
 ```bash
-cd remember-when-cli
-npm install -g .
+npm install -g remember-when-cli
+remember-when install
 ```
 
 ### 2. AI Archivist (OpenClaw Skill)
 Integrate the archivist logic into your OpenClaw agent automatically:
 ```bash
-npx skills add https://github.com/2mes4/remember-when --skill remember-when-skill
+npx clawhub install remember-when-skill
 ```
 
 ### 3. Verification

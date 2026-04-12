@@ -1,15 +1,20 @@
 # Features - Remember When
 
 ## Core Capabilities
-- **Local Storage**: Everything is stored on your machine in `~/.remember-when/`. No cloud dependencies for your data.
-- **Daily Organization**: Automatic folder creation (`YYYY-MM-DD`) for media files.
-- **Master Timeline**: A centralized `timeline.json` indexing every memory across all groups.
+- **Local Storage**: Everything is stored on your machine in `~/.remember-when/` (symlinked as `~/Memories`). No cloud dependencies for your data.
+- **Group Isolation**: Each group has its own folder, collections, cross collections, and rules. Data never mixes between groups.
+- **Daily Collections**: Automatic folder creation (`YYYY-MM-DD`) per group, with `collection.json` holding entries and daily summaries.
 - **Multimedia Support**: Seamless handling of photos, videos, audio notes, and text.
 - **Interest Points**: Dedicated `interest_point` type for capturing places, locations, addresses, and geographic points of interest.
 - **Rich Summaries**: Agent-generated descriptions that provide context beyond simple file names.
 - **Daily Chronicles**: Consolidated summaries of what happened each day in each group.
 - **Inventory Audit**: Command-line tool to identify missing group info or gaps in daily chronicles.
 - **Agent Autonomy**: Designed for agents to proactively fill in missing context.
+- **Cross Collections**: Thematic groupings of entries across different days within the same group (e.g., "Viatge a Paris").
+- **Group Rules**: Configurable triggers (keyword, location) that automatically suggest or create cross collections.
+- **Contextual Enrichment**: Agent-searched complementary information (weather, history, news) stored at collection and entry level.
+- **Enrichment Deduplication**: Interest points are enriched only once per group; subsequent mentions skip redundant searches.
+- **Install Command**: `remember-when install` initializes storage and creates the `~/Memories` symlink.
 
 ## Behavioral Features
 - **Proactive Archiving**: The agent detects valuable information (places, photos, agreements, points of interest) and offers to archive it without waiting for explicit instructions.

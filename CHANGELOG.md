@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2026-04-12
+### Added
+- **New Storage Architecture**: Group-based folder isolation replacing flat `timeline.json`. Each group has its own folder with collections, cross collections, and rules.
+- **`install` command**: Initializes `~/.remember-when/` and creates `~/Memories` symlink.
+- **`inventory.json`**: Master index of all groups at storage root.
+- **`collection.json`**: Per-day file holding entries and daily summary within each group.
+- **`collection-index.json`**: Per-group index of all collections/days and cross collections.
+- **`rules.json`**: Per-group configuration for cross collection triggers and enrichment settings.
+- **Cross Collections**: `create-cross`, `add-to-cross`, `list-cross`, `show-cross` commands for thematic groupings within a group.
+- **Group Rules**: `set-rule`, `list-rules` commands for automatic cross collection suggestions based on keyword/location patterns.
+- **Contextual Enrichment**: `set-daily-context` command to add weather, news, and historical events to a day's collection.
+- **Entry Enrichment**: `enrich-entry` command to add history, location, and type data to specific entries (especially `interest_point`).
+- **Enrichment Deduplication**: `findEnrichedInterestPoint` to avoid re-enriching the same place within a group.
+- **Enrichment Configuration**: Default settings in `rules.json` with `dailyContext` and `interestPoints` sections.
+- **30 tests**: Comprehensive unit and E2E test coverage for all commands.
+
+### Changed
+- **BREAKING**: Storage architecture completely redesigned. Old `timeline.json` format is no longer used. Fresh start required.
+- **BREAKING**: `add` command now stores entries in `<group>/<YYYY-MM-DD>/collection.json` instead of a central timeline.
+- **BREAKING**: `set-group-info` now creates a full group folder structure (including `cross/` directory and `rules.json`).
+
 ## [1.2.0] - 2026-04-11
 ### Added
 - **Proactive Archiving**: Agent detects valuable content (places, photos, agreements, points of interest) and offers to archive autonomously.

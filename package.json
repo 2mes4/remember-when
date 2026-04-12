@@ -1,6 +1,6 @@
 {
   "name": "remember-when-monorepo",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Orchestration for Remember When project",
   "private": true,
   "scripts": {
