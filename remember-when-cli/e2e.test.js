@@ -40,4 +40,34 @@ describe('Remember When CLI - E2E Tests', () => {
     expect(output).toContain('Group: E2EGroup');
     expect(output).toContain('[!] MISSING: Group description');
   });
+
+  it('should handle file archiving, inventory audit, and group info update', () => {
+    const groupName = "WorkflowGroup";
+    const tempFilePath = path.join(testDir, 'e2e-image.jpg');
+    fs.writeFileSync(tempFilePath, 'fake-image-binary-data');
+
+    // 1. Add entry with file
+    const addCmd = `REMEMBER_WHEN_TEST_DIR=${testDir} node ${cliPath} add -g ${groupName} -t photo -s UserA -r "Event photo" -f ${tempFilePath}`;
+    execSync(addCmd);
+
+    // 2. Check inventory (should be missing group info)
+    const invCmd1 = `REMEMBER_WHEN_TEST_DIR=${testDir} node ${cliPath} inventory`;
+    const invOutput1 = execSync(invCmd1).toString();
+    expect(invOutput1).toContain(`Group: ${groupName}`);
+    expect(invOutput1).toContain('[!] MISSING: Group description');
+
+    // 3. Add group info
+    const setInfoCmd = `REMEMBER_WHEN_TEST_DIR=${testDir} node ${cliPath} set-group-info -g ${groupName} -d "A professional testing group" -p "UserA, UserB"`;
+    execSync(setInfoCmd);
+
+    // 4. Validate info is now present in inventory
+    const invOutput2 = execSync(invCmd1).toString();
+    expect(invOutput2).toContain('[ok] Group info present.');
+    
+    // 5. Verify physical file storage
+    const timeline = JSON.parse(fs.readFileSync(path.join(testDir, 'timeline.json'), 'utf8'));
+    const entry = timeline.entries.find(e => e.group === groupName);
+    expect(entry.file).toBeDefined();
+    expect(fs.existsSync(path.join(testDir, entry.file))).toBe(true);
+  });
 });

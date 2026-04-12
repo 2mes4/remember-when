@@ -15,6 +15,11 @@ All notable changes to this project will be documented in this file.
 - **OpenClaw Channel Config**: Web documentation now includes `requireMention: false` setup step.
 - **Multimedia Capture Workflow**: Explicit download → `add --file` → confirm pipeline.
 
+## [1.1.8] - 2026-04-10
+### Added
+- Comprehensive E2E test case verifying the full workflow: archiving media, auditing inventory, and updating group context.
+- Enhanced installation guide in the documentation web with specific OpenClaw channel configuration requirements (`requireMention: false`).
+
 ## [1.1.6] - 2026-04-10
 ### Added
 - Explicit Security & Privacy Statement in `SKILL.md` to reduce VirusTotal false positives.
